@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmf8c24mgc1ur"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Asets/Models/Environment/naturePack_001.obj" id="1_cinna"]
+[ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_7gc2v"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hjbk3"]
+data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgira"]
+sky_top_color = Color(0.117647, 0.462745, 0.74902, 1)
+
+[sub_resource type="Sky" id="Sky_jbi02"]
+sky_material = SubResource("ProceduralSkyMaterial_sgira")
+
+[sub_resource type="Environment" id="Environment_qaj4q"]
+background_mode = 2
+sky = SubResource("Sky_jbi02")
+
+[node name="Mundo" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230814, -0.183464, 0.240302)
+
+[node name="NaturePack001" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15, 0, 15)
+mesh = ExtResource("1_cinna")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NaturePack001"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NaturePack001/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hjbk3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.984278, -0.000557113, -0.99965, -0.0264666, -0.942749, 9.17101, 4.40892)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qaj4q")
+
+[node name="Player" parent="." instance=ExtResource("2_7gc2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 1.17794, -0.861486)

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blvw0jn8vaq25"
+path="res://.godot/imported/naturePack_015.obj-fde6524a2ab81abcdaa8a9a82c5e6cab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/naturePack_015.obj-fde6524a2ab81abcdaa8a9a82c5e6cab.mesh"]
+
+source_file="res://Asets/Models/Environment/naturePack_015.obj"
+dest_files=["res://.godot/imported/naturePack_015.obj-fde6524a2ab81abcdaa8a9a82c5e6cab.mesh", "res://.godot/imported/naturePack_015.obj-fde6524a2ab81abcdaa8a9a82c5e6cab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

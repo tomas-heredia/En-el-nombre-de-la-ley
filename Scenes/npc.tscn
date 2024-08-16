@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://p6v28xrqgp56"]
+
+[ext_resource type="Script" path="res://NPC.gd" id="1_ikdvd"]
+[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://icon.svg" id="2_kkrpk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjcba"]
+
+[node name="NPC" type="Node3D"]
+script = ExtResource("1_ikdvd")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.494975, 0.494975, 0, -0.494975, 0.494975, 0, 0, 0)
+texture = ExtResource("2_kkrpk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("BoxShape3D_pjcba")

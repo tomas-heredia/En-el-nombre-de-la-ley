@@ -1,32 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxljkh1k0pmea"]
+[gd_scene load_steps=4 format=3 uid="uid://bxljkh1k0pmea"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6jwqf"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://icon.svg" id="2_i5blr"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_tbdkn"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_ti2ah"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_a7n85"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_yblce"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4x0i2"]
 size = Vector3(1.21637, 1, 1)
-
-[sub_resource type="Resource" id="Resource_ebxqn"]
-script = ExtResource("5_a7n85")
-duration = 1.0
-transition = 0
-ease = 2
-
-[sub_resource type="Resource" id="Resource_es8gm"]
-script = ExtResource("6_yblce")
-cull_mask = 1048575
-h_offset = 0.0
-v_offset = 0.0
-projection = 0
-fov = 75.0
-size = 1.0
-frustum_offset = Vector2(0, 0)
-near = 0.05
-far = 4000.0
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_6jwqf")
@@ -39,16 +17,6 @@ texture = ExtResource("2_i5blr")
 transform = Transform3D(0.557883, 0, 0, 0, 0.557883, 0, 0, 0, 0.557883, 0.0159607, 0, 0)
 shape = SubResource("BoxShape3D_4x0i2")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999613, -0.00391776, -0.027545, 0.0169752, 0.870288, 0.492251, 0.0220436, -0.492528, 0.870018, -0.0598361, 1.06099, 2.16373)
-
-[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
-script = ExtResource("3_tbdkn")
-
-[node name="PhantomCamera3D" type="Node3D" parent="."]
-transform = Transform3D(0.999613, -0.00391776, -0.027545, 0.0169752, 0.870288, 0.492251, 0.0220436, -0.492528, 0.870018, -0.0598361, 1.06099, 2.16373)
-script = ExtResource("4_ti2ah")
-priority = 1
-follow_mode = 2
-tween_resource = SubResource("Resource_ebxqn")
-camera_3d_resource = SubResource("Resource_es8gm")
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1

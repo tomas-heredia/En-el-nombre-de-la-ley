@@ -1,31 +1,37 @@
 extends CharacterBody3D
 
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@onready var navegationAgent := $NavigationAgent3D
+const SPEED = 50.0
 
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	if navegationAgent.is_navigation_finished():
+		pass
+	
+	mover(delta)
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+func _input(event):
+	if Input.is_action_just_pressed("LeftClick"):
+		var camera = get_tree().get_nodes_in_group("camara")[0]
+		var mousePosition = get_viewport().get_mouse_position()
+		var rayLength = 100
+		var from = camera.project_ray_origin(mousePosition)
+		var to = from + camera.project_ray_normal(mousePosition) * rayLength
+		var space = get_world_3d().direct_space_state
+		var rayQuery = PhysicsRayQueryParameters3D.new()
+		rayQuery.from = from
+		rayQuery.to = to
+		rayQuery.collide_with_areas = true
+		var result = space.intersect_ray(rayQuery)
+		print(result)
+		
+		navegationAgent.target_position = result.position
+
+func mover(delta):
+	var targetPos = navegationAgent.get_next_path_position()
+	var direction = global_position.direction_to(targetPos)
+	
+	velocity = direction * SPEED
 	move_and_slide()

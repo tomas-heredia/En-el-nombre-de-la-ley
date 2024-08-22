@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqk73ddy5gpmx"]
+
+[ext_resource type="Script" path="res://Scripts/puerta.gd" id="1_jdvdt"]
+[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="1_tn244"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rn3y7"]
+size = Vector3(1, 1, 0.247902)
+
+[node name="Puerta" type="Node3D"]
+script = ExtResource("1_jdvdt")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.68, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999458, 0.0329285, 0, -0.0329285, 0.999458, 0, 0, 0)
+texture = ExtResource("1_tn244")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.998825, 0.0484662, 0, -0.0484662, 0.998825, 0, 0.0414398, 0.0251545)
+shape = SubResource("BoxShape3D_rn3y7")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

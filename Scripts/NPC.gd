@@ -1,16 +1,29 @@
 extends Node3D
 
-
+var interactuable :bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	$Label.position.x = $Marker3D.position.x
+	$Label.position.y = $Marker3D.position.y
+	$Label.visible = false
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if interactuable:
+		if Input.is_action_just_pressed("Interact"):
+			DialogicHandeler.dialogo("timelinePrueva")
+		
 
 
-func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
-	if Input.is_action_just_pressed("LeftClick"):
-		print("Tocado")
+
+
+
+func _on_interaccion_area_entered(area):
+	interactuable = true
+	$Label.visible = true
+
+
+func _on_interaccion_area_exited(area):
+	interactuable = false
+	$Label.visible = false

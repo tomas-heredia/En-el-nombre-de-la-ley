@@ -1,22 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxljkh1k0pmea"]
+[gd_scene load_steps=5 format=3 uid="uid://bxljkh1k0pmea"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6jwqf"]
-[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://icon.svg" id="2_i5blr"]
+[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_thobn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4x0i2"]
 size = Vector3(1.21637, 1, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_b2bue"]
+
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 3
 script = ExtResource("1_6jwqf")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.552439, 0, 0, 0, 0.436424, 0.338708, 0, -0.338708, 0.436424, 0, 0, 0)
-texture = ExtResource("2_i5blr")
+texture = ExtResource("2_thobn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.557883, 0, 0, 0, 0.557883, 0, 0, 0, 0.557883, 0.0159607, 0, 0)
 shape = SubResource("BoxShape3D_4x0i2")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-target_desired_distance = 0.1
-path_max_distance = 5.01
+[node name="Interaccion" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaccion"]
+transform = Transform3D(1.24323, 0, 0, 0, 1.04751, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_b2bue")

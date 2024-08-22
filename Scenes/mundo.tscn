@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmf8c24mgc1ur"]
+[gd_scene load_steps=15 format=3 uid="uid://dmf8c24mgc1ur"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Asets/Models/Environment/naturePack_001.obj" id="1_cinna"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_7gc2v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_k31qw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_bhqaf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_k2wax"]
+[ext_resource type="PackedScene" uid="uid://p6v28xrqgp56" path="res://Scenes/npc.tscn" id="7_hwrrx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgira"]
 sky_top_color = Color(0.117647, 0.462745, 0.74902, 1)
@@ -36,9 +37,8 @@ near = 0.05
 far = 4000.0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_xs8mw"]
-vertices = PackedVector3Array(-14.5, 0.75, -14.5, -14.5, 0.75, 14.5, 14.5, 0.75, 14.5, 14.5, 0.75, -14.5)
+vertices = PackedVector3Array(-14.5, 0.5, -14.3888, -14.5, 0.5, 14.6112, 14.5, 0.5, 14.6112, 14.5, 0.5, -14.3888)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-cell_height = 0.01
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hjbk3"]
 data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3)
@@ -65,14 +65,13 @@ camera_3d_resource = SubResource("Resource_6h4hq")
 navigation_mesh = SubResource("NavigationMesh_xs8mw")
 
 [node name="NaturePack001" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15, 0, 15)
+transform = Transform3D(9.96295, 0, 0, 0, 1.60523, 0, 0, 0, 9.96295, -15, 0, 15)
 mesh = ExtResource("1_cinna")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/NaturePack001"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/NaturePack001/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_hjbk3")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
@@ -80,3 +79,6 @@ transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("3_53nrf")
+
+[node name="NPC" parent="." instance=ExtResource("7_hwrrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15005, 1.00508, 0)

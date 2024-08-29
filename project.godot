@@ -31,6 +31,9 @@ directories/dch_directory={
 directories/dtl_directory={
 "timelinePrueva": "res://TimeLines/timelinePrueva.dtl"
 }
+layout/style_list=["res://Style/estilo.tres", "res://Style/New_Style.tres"]
+layout/default_style="res://Style/estilo.tres"
+variables={}
 
 [display]
 

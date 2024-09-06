@@ -30,6 +30,8 @@ overrides = {}
 script = ExtResource("2_3ohb6")
 scene = ExtResource("5_xvtlo")
 overrides = {
+"typing_sounds_enabled": "false",
+"typing_sounds_mode": "2",
 "typing_sounds_sounds_folder": "\"res://Asets/sounds\""
 }
 

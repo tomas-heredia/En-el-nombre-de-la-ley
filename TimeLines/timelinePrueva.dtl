@@ -1,6 +1,9 @@
 join character1 center
+[voice path="res://Asets/sounds/dialogo/Y2meta.app - sound effect of sans talking _-_ efecto de sonido de sans hablando (128 kbps).mp3" volume="1.0"]
 character1: hola
 - como estas ?
+	[voice volume="0.0"]
 	character1: bien, y tu ?
 - adios
+	[voice volume="0.0"]
 	character1: by

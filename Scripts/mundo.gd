@@ -17,4 +17,4 @@ func cambiar():
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "fadeOut":
-		get_tree().change_scene_to_file("res://Scenes/mundo_2.tscn")
+		get_tree().change_scene_to_file("res://Scenes/lobby.tscn")

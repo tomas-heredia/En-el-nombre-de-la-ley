@@ -13,5 +13,5 @@ func _process(delta):
 
 func _on_button_button_up():
 	
-	get_tree().change_scene_to_file("res://Scenes/mundo.tscn")
+	get_tree().change_scene_to_file("res://Scenes/exterior.tscn")
 	

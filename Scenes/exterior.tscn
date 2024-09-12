@@ -1,0 +1,151 @@
+[gd_scene load_steps=22 format=3 uid="uid://dmf8c24mgc1ur"]
+
+[ext_resource type="Script" path="res://Scripts/mundo.gd" id="1_mit0t"]
+[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_vrp4t"]
+[ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="3_6amup"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_gj51f"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_f1si3"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_hy2kc"]
+[ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="7_rbntd"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_nucu7"]
+[ext_resource type="PackedScene" uid="uid://p6v28xrqgp56" path="res://Scenes/npc.tscn" id="9_bat68"]
+[ext_resource type="PackedScene" uid="uid://bqk73ddy5gpmx" path="res://Scenes/puerta.tscn" id="10_j3fso"]
+[ext_resource type="AudioStream" uid="uid://x7by45sd04cb" path="res://Assets/sounds/music/lost.wav" id="11_u8jy0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgira"]
+sky_top_color = Color(0.117647, 0.462745, 0.74902, 1)
+
+[sub_resource type="Sky" id="Sky_qwx0w"]
+sky_material = SubResource("ProceduralSkyMaterial_sgira")
+
+[sub_resource type="Environment" id="Environment_qaj4q"]
+background_mode = 2
+sky = SubResource("Sky_qwx0w")
+
+[sub_resource type="Resource" id="Resource_mev1u"]
+script = ExtResource("5_f1si3")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_6h4hq"]
+script = ExtResource("6_hy2kc")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_xs8mw"]
+vertices = PackedVector3Array(-14.5, 0.5, -14.3888, -14.5, 0.5, 14.6112, 14.5, 0.5, 14.6112, 14.5, 0.5, -14.3888)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hjbk3"]
+data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3)
+
+[sub_resource type="Animation" id="Animation_h8qku"]
+resource_name = "fadeIn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mhxe7"]
+resource_name = "fadeOut"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpwg0"]
+_data = {
+"fadeIn": SubResource("Animation_h8qku"),
+"fadeOut": SubResource("Animation_mhxe7")
+}
+
+[node name="Mundo" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230814, -0.183464, 0.240302)
+script = ExtResource("1_mit0t")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -100.0
+offset_top = -74.0
+offset_right = 28.0
+offset_bottom = 54.0
+scale = Vector2(11.9658, 6.83689)
+texture = ExtResource("2_vrp4t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.984278, -0.000557113, -0.99965, -0.0264666, -0.942749, 9.17101, 4.40892)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qaj4q")
+
+[node name="Player" parent="." instance=ExtResource("3_6amup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 0.797019, -0.861486)
+
+[node name="PhantomCamera3D" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
+script = ExtResource("4_gj51f")
+follow_mode = 2
+tween_resource = SubResource("Resource_mev1u")
+camera_3d_resource = SubResource("Resource_6h4hq")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_xs8mw")
+
+[node name="NaturePack001" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(9.96295, 0, 0, 0, 1.60523, 0, 0, 0, 9.96295, -15, 0, 15)
+mesh = ExtResource("7_rbntd")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/NaturePack001"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/NaturePack001/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hjbk3")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 2.31026, 2.42929)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+script = ExtResource("8_nucu7")
+
+[node name="NPC" parent="." instance=ExtResource("9_bat68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15005, 1.00508, 0)
+
+[node name="Puerta" parent="." instance=ExtResource("10_j3fso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30812, 1.62768, -9.97625)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tpwg0")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_u8jy0")
+autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

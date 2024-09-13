@@ -1,3 +1,4 @@
+do Global.interaccion()
 join character1 center
 [voice path="res://Asets/sounds/dialogo/Y2meta.app - sound effect of sans talking _-_ efecto de sonido de sans hablando (128 kbps).mp3" volume="1.0"]
 character1: hola
@@ -7,3 +8,5 @@ character1: hola
 - adios
 	[voice volume="0.0"]
 	character1: by
+[signal arg="termino"]
+[end_timeline]

@@ -29,6 +29,7 @@ directories/dch_directory={
 "character1": "res://Characters/character1.dch"
 }
 directories/dtl_directory={
+"timelineOficina": "res://TimeLines/timelineOficina.dtl",
 "timelinePrueva": "res://TimeLines/timelinePrueva.dtl"
 }
 layout/style_list=["res://Style/estilo.tres", "res://Style/New_Style.tres"]

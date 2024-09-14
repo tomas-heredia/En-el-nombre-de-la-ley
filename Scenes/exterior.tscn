@@ -139,13 +139,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15005, 1.00508, 0)
 [node name="Puerta" parent="." instance=ExtResource("10_j3fso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30812, 1.62768, -9.97625)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_u8jy0")
+autoplay = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tpwg0")
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_u8jy0")
-autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

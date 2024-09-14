@@ -30,7 +30,6 @@ overrides = {}
 script = ExtResource("2_3ohb6")
 scene = ExtResource("5_xvtlo")
 overrides = {
-"typing_sounds_enabled": "false",
 "typing_sounds_mode": "2",
 "typing_sounds_sounds_folder": "\"res://Asets/sounds\""
 }
@@ -60,4 +59,4 @@ script = ExtResource("10_xk5qr")
 name = "estilo"
 base_overrides = {}
 layers = Array[ExtResource("2_3ohb6")]([SubResource("Resource_axv6r"), SubResource("Resource_nalwj"), SubResource("Resource_rpqyv"), SubResource("Resource_efaku"), SubResource("Resource_hvi05"), SubResource("Resource_ha5uo"), SubResource("Resource_30c1v"), SubResource("Resource_x1mgi")])
-metadata/_latest_layer = 7
+metadata/_latest_layer = 3

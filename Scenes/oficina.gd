@@ -3,18 +3,16 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.moverse = true
-	$Puerta.connect("cambiar",cambiar)
-	$AnimationPlayer.play("fadeIn")
+	DialogicHandeler.dialogo("timelineOficina")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Global.aLobby:
+		salir()
 
-func cambiar():
-	Global.moverse = false
+func salir():
+	Global.aLobby = false
 	$AnimationPlayer.play("fadeOut")
+
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "fadeOut":

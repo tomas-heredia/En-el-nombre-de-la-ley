@@ -12,12 +12,12 @@
 "pitch_base": 1.0,
 "pitch_variance": 0.0,
 "skip_characters": 1.0,
-"sound_path": "res://Asets/sounds/Text3.wav",
+"sound_path": "res://Assets/sounds/Text.wav",
 "volume_base": 0.0,
 "volume_variance": 0.0
 }
 },
-"style": ""
+"style": "estilo"
 },
 "default_portrait": "idel",
 "description": "",

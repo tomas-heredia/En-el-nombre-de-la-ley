@@ -8,5 +8,5 @@ character1: hola
 - adios
 	[voice volume="0.0"]
 	character1: by
-[signal arg="termino"]
-[end_timeline]
+[wait time="0.1"]
+do Global.interaccion()

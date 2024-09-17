@@ -1,0 +1,6 @@
+do Global.interaccion()
+join character1 center
+character1: bienvenido al looby.
+character1: las oficinas estan en mantenimiento.
+[wait time="0.1"]
+[signal arg="termino"]

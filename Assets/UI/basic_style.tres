@@ -33,6 +33,8 @@ overrides = {
 "box_animation_new_text": "1",
 "box_color_custom": "Color(1, 1, 1, 1)",
 "box_panel": "\"text_stylebox.tres\"",
+"name_label_font": "\"res://Assets/Fonts/BarlowCondensed-SemiBoldItalic.ttf\"",
+"name_label_use_global_font": "false",
 "normal_font": "\"res://Assets/Fonts/BarlowCondensed-SemiBoldItalic.ttf\"",
 "text_custom_color": "Color(1, 1, 1, 0)",
 "text_size": "28.0",
@@ -47,7 +49,10 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_486nh"]
 script = ExtResource("2_d60wr")
 scene = ExtResource("6_5t6mb")
-overrides = {}
+overrides = {
+"font_custom": "\"res://Assets/Fonts/BarlowCondensed-SemiBoldItalic.ttf\"",
+"font_use_global": "false"
+}
 
 [sub_resource type="Resource" id="Resource_mnnw5"]
 script = ExtResource("2_d60wr")

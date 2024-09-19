@@ -8,12 +8,23 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "New portrait",
 "description": "",
-"display_name": "ciudadano2",
+"display_name": "Ciudadano 2",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
+"portraits": {
+"New portrait": {
+"export_overrides": {
+"image": "\"res://Assets/Textures/PersonajeB.png\""
+},
+"ignore_char_scale": true,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.17,
+"scene": ""
+}
+},
 "scale": 1.0
 }

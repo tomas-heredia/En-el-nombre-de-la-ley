@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://bcai6dqmejwll" path="res://Assets/UI/title_theme.tres" id="6_3wdy1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ycg2"]
-load_path = "res://.godot/imported/Referencua MENU PRINCIPAL.jpg-67ff6440f098a7418b39d93e76eb569d.ctex"
 
 [sub_resource type="ImageTexture" id="ImageTexture_soxli"]
 

@@ -1,21 +1,124 @@
-[gd_scene load_steps=2 format=3 uid="uid://uvwyj82uaee6"]
+[gd_scene load_steps=8 format=3 uid="uid://uvwyj82uaee6"]
 
 [ext_resource type="Script" path="res://Scripts/Inicio.gd" id="1_yc4wn"]
+[ext_resource type="Texture2D" uid="uid://ipu1a3em8tfg" path="res://Assets/UI/Sección Menu Principal/Referencua MENU PRINCIPAL.jpg" id="2_3te16"]
+[ext_resource type="Texture2D" uid="uid://be8wfbo6qy2s2" path="res://Assets/UI/Sección Menu Principal/PNG_s/Botón.png" id="2_ggaqt"]
+[ext_resource type="Theme" uid="uid://dbwc3jc62knn6" path="res://Assets/UI/basic_text_theme.tres" id="3_cx6lu"]
+[ext_resource type="Texture2D" uid="uid://bxrjacrna1abt" path="res://Assets/UI/Sección Menu Principal/PNG_s/Logo Placeholder/Logo Legislatura.png" id="5_di1oo"]
+[ext_resource type="Theme" uid="uid://bcai6dqmejwll" path="res://Assets/UI/title_theme.tres" id="6_3wdy1"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_soxli"]
 
 [node name="Inicio" type="Node2D"]
 script = ExtResource("1_yc4wn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1280.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 1
 
-[node name="Button" type="Button" parent="TextureRect"]
+[node name="BackgroundRect" type="TextureRect" parent="TextureRect"]
+visible = false
 layout_mode = 0
-offset_left = 276.0
-offset_top = 316.0
-offset_right = 893.0
-offset_bottom = 544.0
-theme_override_font_sizes/font_size = 44
-text = "iniciar"
+offset_top = 90.0
+offset_right = 1920.0
+offset_bottom = 1170.0
+texture = ExtResource("2_3te16")
+expand_mode = 1
 
-[connection signal="button_up" from="TextureRect/Button" to="." method="_on_button_button_up"]
+[node name="StartButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = 24.0
+offset_right = 360.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ggaqt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/StartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -41.5
+offset_right = 150.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_cx6lu")
+text = "Nueva Partida"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = 166.0
+offset_right = 357.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ggaqt")
+texture_disabled = SubResource("ImageTexture_soxli")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/CreditsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -41.5
+offset_right = 150.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_cx6lu")
+text = "Salir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LogoRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 165.0
+offset_right = 1217.0
+offset_bottom = 574.0
+texture = ExtResource("5_di1oo")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 481.0
+offset_right = 1443.0
+offset_bottom = 601.0
+theme = ExtResource("6_3wdy1")
+text = "¡EN EL NOMBRE DE LA LEY!"
+
+[connection signal="button_up" from="TextureRect/StartButton" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="TextureRect/CreditsButton" to="." method="_on_button_button_up"]

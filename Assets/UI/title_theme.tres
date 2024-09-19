@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bcai6dqmejwll"]
+
+[ext_resource type="FontFile" uid="uid://dcfuwxtcbnfxi" path="res://Assets/Fonts/BarlowCondensed-BlackItalic.ttf" id="1_npot0"]
+
+[resource]
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.356863)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 8
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("1_npot0")

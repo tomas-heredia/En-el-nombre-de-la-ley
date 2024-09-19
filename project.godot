@@ -37,7 +37,7 @@ directories/dtl_directory={
 "timelinePrueva": "res://TimeLines/timelinePrueva.dtl",
 "timelinePrueva2": "res://TimeLines/timelinePrueva2.dtl"
 }
-layout/style_list=["res://Assets/UI/basic_style.tres"]
+layout/style_list=["res://Assets/UI/basic_style.tres", "res://Assets/UI/New_File.tres"]
 layout/default_style="res://Assets/UI/basic_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"

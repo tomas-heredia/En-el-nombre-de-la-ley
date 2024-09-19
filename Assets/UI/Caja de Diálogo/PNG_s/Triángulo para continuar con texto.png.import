@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlw6dgaek3qmk"
-path="res://.godot/imported/Referencia SELECTOR DE OPCIONES 2.jpg-ab6f62986798516c2a9956fc31091ad6.ctex"
+uid="uid://c8kagh2bewr4q"
+path="res://.godot/imported/Triángulo para continuar con texto.png-29967d7d2ddcb7e24901e6a094898446.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Sección Caja de Diálogo/Referencia SELECTOR DE OPCIONES 2.jpg"
-dest_files=["res://.godot/imported/Referencia SELECTOR DE OPCIONES 2.jpg-ab6f62986798516c2a9956fc31091ad6.ctex"]
+source_file="res://Assets/UI/Caja de Diálogo/PNG_s/Triángulo para continuar con texto.png"
+dest_files=["res://.godot/imported/Triángulo para continuar con texto.png-29967d7d2ddcb7e24901e6a094898446.ctex"]
 
 [params]
 

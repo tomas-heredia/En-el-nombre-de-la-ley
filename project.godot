@@ -26,15 +26,19 @@ Global="*res://Scripts/Global.gd"
 [dialogic]
 
 directories/dch_directory={
-"character1": "res://Characters/character1.dch"
+"character1": "res://Characters/character1.dch",
+"ciudadano1": "res://Characters/ciudadano1.dch",
+"ciudadano2": "res://Characters/ciudadano2.dch",
+"legisladora": "res://Characters/legisladora.dch",
+"protagonista": "res://Characters/protagonista.dch"
 }
 directories/dtl_directory={
 "timelineOficina": "res://TimeLines/timelineOficina.dtl",
 "timelinePrueva": "res://TimeLines/timelinePrueva.dtl",
 "timelinePrueva2": "res://TimeLines/timelinePrueva2.dtl"
 }
-layout/style_list=["res://Style/estilo.tres", "res://Style/New_Style.tres"]
-layout/default_style="res://Style/estilo.tres"
+layout/style_list=["res://Assets/UI/basic_style.tres"]
+layout/default_style="res://Assets/UI/basic_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.05

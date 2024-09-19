@@ -1,11 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://uvwyj82uaee6"]
 
 [ext_resource type="Script" path="res://Scripts/Inicio.gd" id="1_yc4wn"]
-[ext_resource type="Texture2D" uid="uid://ipu1a3em8tfg" path="res://Assets/UI/Sección Menu Principal/Referencua MENU PRINCIPAL.jpg" id="2_3te16"]
 [ext_resource type="Texture2D" uid="uid://be8wfbo6qy2s2" path="res://Assets/UI/Sección Menu Principal/PNG_s/Botón.png" id="2_ggaqt"]
 [ext_resource type="Theme" uid="uid://dbwc3jc62knn6" path="res://Assets/UI/basic_text_theme.tres" id="3_cx6lu"]
 [ext_resource type="Texture2D" uid="uid://bxrjacrna1abt" path="res://Assets/UI/Sección Menu Principal/PNG_s/Logo Placeholder/Logo Legislatura.png" id="5_di1oo"]
 [ext_resource type="Theme" uid="uid://bcai6dqmejwll" path="res://Assets/UI/title_theme.tres" id="6_3wdy1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ycg2"]
+load_path = "res://.godot/imported/Referencua MENU PRINCIPAL.jpg-67ff6440f098a7418b39d93e76eb569d.ctex"
 
 [sub_resource type="ImageTexture" id="ImageTexture_soxli"]
 
@@ -29,7 +31,7 @@ layout_mode = 0
 offset_top = 90.0
 offset_right = 1920.0
 offset_bottom = 1170.0
-texture = ExtResource("2_3te16")
+texture = SubResource("CompressedTexture2D_1ycg2")
 expand_mode = 1
 
 [node name="StartButton" type="TextureButton" parent="TextureRect"]

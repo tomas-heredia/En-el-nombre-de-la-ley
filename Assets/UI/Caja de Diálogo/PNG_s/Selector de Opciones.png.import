@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwpoykusuhaap"
-path="res://.godot/imported/Selector de Opciones.png-1a34e19b4691da53b282b3da375efd53.ctex"
+path="res://.godot/imported/Selector de Opciones.png-07efbb420cfd8f2ff96fe5e366401545.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Sección Caja de Diálogo/PNG_s/Selector de Opciones.png"
-dest_files=["res://.godot/imported/Selector de Opciones.png-1a34e19b4691da53b282b3da375efd53.ctex"]
+source_file="res://Assets/UI/Caja de Diálogo/PNG_s/Selector de Opciones.png"
+dest_files=["res://.godot/imported/Selector de Opciones.png-07efbb420cfd8f2ff96fe5e366401545.ctex"]
 
 [params]
 

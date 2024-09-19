@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvovpp1eyi45k"
-path="res://.godot/imported/Caja Contenedora Diálogo.png-ddc4e589331f917c6a96d9d95c708846.ctex"
+uid="uid://cqj2fntsuqyys"
+path="res://.godot/imported/Ícono Avatar Placeholder.png-e93cc3930221f77fc4a2d1a45fc6a81c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Sección Caja de Diálogo/PNG_s/Caja Contenedora Diálogo.png"
-dest_files=["res://.godot/imported/Caja Contenedora Diálogo.png-ddc4e589331f917c6a96d9d95c708846.ctex"]
+source_file="res://Assets/UI/Caja de Diálogo/PNG_s/Ícono Avatar Placeholder.png"
+dest_files=["res://.godot/imported/Ícono Avatar Placeholder.png-e93cc3930221f77fc4a2d1a45fc6a81c.ctex"]
 
 [params]
 

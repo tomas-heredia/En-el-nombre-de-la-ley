@@ -33,8 +33,9 @@ directories/dch_directory={
 "protagonista": "res://Characters/protagonista.dch"
 }
 directories/dtl_directory={
+"timelineExterior": "res://TimeLines/timelineExterior.dtl",
+"timelineLobby": "res://TimeLines/timelineLobby.dtl",
 "timelineOficina": "res://TimeLines/timelineOficina.dtl",
-"timelinePrueva": "res://TimeLines/timelinePrueva.dtl",
 "timelinePrueva2": "res://TimeLines/timelinePrueva2.dtl"
 }
 layout/style_list=["res://Assets/UI/basic_style.tres", "res://Assets/UI/New_File.tres"]

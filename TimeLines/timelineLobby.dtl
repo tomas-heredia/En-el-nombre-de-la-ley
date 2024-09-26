@@ -1,0 +1,15 @@
+do Global.interaccion()
+join legisladora left
+legisladora: ¡Buen día, joven!
+legisladora: Me anunciaron que venías por un tema de una propuesta de ley, ¿es así?
+legisladora: Contame.
+leave legisladora
+protagonista: ¡Si! Es acerca de la basura que generamos como tucumanos.
+protagonista: ¿No deberíamos regular la forma de la que tratamos la basura?
+join legisladora left
+legisladora: Estoy de acuerdo, mejoraría nuestra calidad de vida.
+legisladora: ¿Cómo propones tratar el tema?
+leave legisladora
+- ¿Con educación?
+- Con una planta de tratamiento de residuos.
+- ¡Con un monstruo que devore basura!

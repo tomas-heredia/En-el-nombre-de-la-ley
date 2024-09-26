@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	if interactuable:
 		if Input.is_action_just_pressed("Interact") and ! Global.get_interactuando():
-			DialogicHandeler.dialogo("timelinePrueva2")
+			DialogicHandeler.dialogo("timelineLobby")
 		
 
 

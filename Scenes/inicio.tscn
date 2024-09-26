@@ -1,12 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://uvwyj82uaee6"]
 
 [ext_resource type="Script" path="res://Scripts/Inicio.gd" id="1_yc4wn"]
+[ext_resource type="Texture2D" uid="uid://ddlrfhfhtk4cx" path="res://Assets/UI/Sección Menu Principal/Pantalla Principal sin botones.jpg" id="2_24dge"]
 [ext_resource type="Texture2D" uid="uid://be8wfbo6qy2s2" path="res://Assets/UI/Sección Menu Principal/PNG_s/Botón.png" id="2_ggaqt"]
 [ext_resource type="Theme" uid="uid://dbwc3jc62knn6" path="res://Assets/UI/basic_text_theme.tres" id="3_cx6lu"]
 [ext_resource type="Texture2D" uid="uid://bxrjacrna1abt" path="res://Assets/UI/Sección Menu Principal/PNG_s/Logo Placeholder/Logo Legislatura.png" id="5_di1oo"]
 [ext_resource type="Theme" uid="uid://bcai6dqmejwll" path="res://Assets/UI/title_theme.tres" id="6_3wdy1"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ycg2"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_soxli"]
 
@@ -25,13 +24,15 @@ size_flags_vertical = 3
 expand_mode = 1
 
 [node name="BackgroundRect" type="TextureRect" parent="TextureRect"]
-visible = false
 layout_mode = 0
-offset_top = 90.0
-offset_right = 1920.0
-offset_bottom = 1170.0
-texture = SubResource("CompressedTexture2D_1ycg2")
+offset_left = -188.0
+offset_top = -10.0
+offset_right = 1732.0
+offset_bottom = 1070.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_24dge")
 expand_mode = 1
+stretch_mode = 2
 
 [node name="StartButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 1
@@ -41,9 +42,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -360.0
-offset_top = 24.0
+offset_top = 172.0
 offset_right = 360.0
-offset_bottom = 144.0
+offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_ggaqt")
@@ -76,9 +77,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -363.0
-offset_top = 166.0
+offset_top = 314.0
 offset_right = 357.0
-offset_bottom = 286.0
+offset_bottom = 434.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_ggaqt")
@@ -105,6 +106,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LogoRect" type="TextureRect" parent="TextureRect"]
+visible = false
 layout_mode = 0
 offset_left = 701.0
 offset_top = 165.0
@@ -113,6 +115,7 @@ offset_bottom = 574.0
 texture = ExtResource("5_di1oo")
 
 [node name="Label" type="Label" parent="TextureRect"]
+visible = false
 layout_mode = 0
 offset_left = 499.0
 offset_top = 481.0

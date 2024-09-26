@@ -27,7 +27,7 @@ ciudadano1: Yo no entiendo nada de esas cosas, para mi es como otro mundo.
 leave ciudadano1
 - No se pierde nada con intentar, ¿no?
 - ¡Yo quiero hacer unas leyeees!
-	join ciudadano1 left
-	ciudadano1: ¡Jajaja! ¡Me gusta tu iniciativa!
+join ciudadano1 left
+ciudadano1: ¡Jajaja! ¡Me gusta tu iniciativa!
 [wait time="0.5"]
 do Global.interaccion()

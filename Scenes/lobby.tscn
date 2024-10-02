@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://d4mlqgcuvt25g"]
 
-[ext_resource type="PackedScene" uid="uid://dujh52r06qxkp" path="res://Scenes/npc_2.tscn" id="1_jkrlk"]
+[ext_resource type="PackedScene" uid="uid://ceydwgo2i6jn5" path="res://Scenes/npc_2.tscn" id="1_jkrlk"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="1_ndo7o"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_lvkoe"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_6gqth"]

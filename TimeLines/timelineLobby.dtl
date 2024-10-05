@@ -8,8 +8,27 @@ protagonista: ¡Si! Es acerca de la basura que generamos como tucumanos.
 protagonista: ¿No deberíamos regular la forma de la que tratamos la basura?
 join legisladora left
 legisladora: Estoy de acuerdo, mejoraría nuestra calidad de vida.
+label como tratar
 legisladora: ¿Cómo propones tratar el tema?
-leave legisladora
-- ¿Con educación?
+- ¿Con educación? | [=""]
+	legisladora: Tiene sentido, si.
+	jump sigue
 - Con una planta de tratamiento de residuos.
+	legisladora: Tiene sentido, si.
+	jump sigue
+	return
 - ¡Con un monstruo que devore basura!
+	legisladora:  Mmmm… No estoy segura que sea lo mejor…
+	jump como tratar
+label sigue
+legisladora: ¿Como te gustaría que empecemos?
+label saber mas
+legisladora: ¿Querés que te cuente algo sobre la Legislatura?
+- ¿Que es un legislador exactamente? ¿Qué hacen?
+	legisladora: Un legislador es, ante todo, un ciudadano como vos y yo.
+	legisladora: Nuestra función principal es proponer, debatir y aprobar nuevas leyes que buscan mejorar la vida en nuestra comunidad. 
+	jump saber mas
+- ¿Me podes contar sobre la Legislatura?
+	[signal arg="a_esc3"]
+- Creo que voy a dar un paseo.
+	[end_timeline]

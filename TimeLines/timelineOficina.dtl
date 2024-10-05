@@ -1,3 +1,13 @@
-No eres bienvenido aqui
-[wait time="0.1"]
-[signal arg="ALobby"]
+protagonista: Este lugar es gigante, ¿no?
+protagonista: Deben haber pasado muchos eventos importantes acá…
+join legisladora center
+legisladora: No tantos en realidad.
+legisladora: Éste edificio tiene solo 6 años. La Legislatura se encontraba en otro lugar antes.
+legisladora: Si hubo historia en ese tiempo igual.
+legisladora: La Ley 9.578 de Promoción Audiovisual se sancionó aquí por ejemplo.
+- ¿Podes contarme más sobre este lugar?
+	legisladora: La Legislatura representa un sistema Representativo, Republicano y Federal…
+	“La caja de resonancia de la voz, del pueblo” expresada a traves de sus representantes.
+- ¿Cómo es que las decisiones que se toman aquí impactan a la gente en la calle?
+	legisladora: Las decisiones que tomamos aquí están diseñadas para mejorar la vida de las personas.
+	legisladora: Cada ley que aprobamos debe traducirse en acciones concretas, desde la protección del medio ambiente hasta la educación y la seguridad.

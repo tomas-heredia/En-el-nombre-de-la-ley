@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d4mlqgcuvt25g"]
+[gd_scene load_steps=33 format=3 uid="uid://d4mlqgcuvt25g"]
 
 [ext_resource type="PackedScene" uid="uid://ceydwgo2i6jn5" path="res://Scenes/npc_2.tscn" id="1_jkrlk"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="1_ndo7o"]
@@ -12,6 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://bqk73ddy5gpmx" path="res://Scenes/puerta.tscn" id="10_88r6j"]
 [ext_resource type="Script" path="res://Scripts/puertaAExterior.gd" id="11_l2rbk"]
 [ext_resource type="Script" path="res://Scenes/puertaAOficina.gd" id="12_6kkdw"]
+[ext_resource type="PackedScene" uid="uid://dgd2ohs6xbo11" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_SueloTecho.glb" id="13_5en06"]
+[ext_resource type="PackedScene" uid="uid://dc17fq2lhvfvg" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_Pared.glb" id="14_rfupu"]
+[ext_resource type="PackedScene" uid="uid://dsdrr11ghdmiv" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_EscalerasIzquierda.glb" id="15_oo4bv"]
+[ext_resource type="PackedScene" uid="uid://dqct41tl73a4b" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_EscalerasDerecha.glb" id="16_oodld"]
+[ext_resource type="PackedScene" uid="uid://des0cbex3scvo" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_Escritorio.glb" id="17_yjjol"]
+[ext_resource type="PackedScene" uid="uid://dfntyjnk321om" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_Silla.glb" id="18_gtr52"]
+[ext_resource type="PackedScene" uid="uid://cvbrearuejla6" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_PilarCilindricoGrande.glb" id="19_dhj4h"]
+[ext_resource type="PackedScene" uid="uid://bihvmnf4my8sv" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_BarandaCorta.glb" id="20_xfh0s"]
+[ext_resource type="PackedScene" uid="uid://brg8t1tse72wf" path="res://Assets/Models/Environment/Lobby/Escenario_Entraada_PuertaNegra.glb" id="21_q66pv"]
 
 [sub_resource type="GDScript" id="GDScript_av6tx"]
 script/source = "extends Node3D
@@ -130,7 +139,7 @@ _data = {
 script = SubResource("GDScript_av6tx")
 
 [node name="NPC2" parent="." instance=ExtResource("1_jkrlk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95305, 0.804249, -2.60123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95305, 1.20314, -2.60123)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -148,7 +157,7 @@ transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.
 environment = SubResource("Environment_f5ryl")
 
 [node name="Player" parent="." instance=ExtResource("2_lvkoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 0.797019, -0.861486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 1.44599, -0.861486)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
@@ -157,10 +166,11 @@ tween_resource = SubResource("Resource_25s27")
 camera_3d_resource = SubResource("Resource_7n8oq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041256, 0.00311756, 0.00764656)
 navigation_mesh = SubResource("NavigationMesh_c5jnx")
 
 [node name="NaturePack001" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(9.96295, 0, 0, 0, 1.60523, 0, 0, 0, 9.96295, -15, 0, 15)
+transform = Transform3D(9.96295, 0, 0, 0, 1.60523, 0, 0, 0, 10.6216, -14.9666, -9.53674e-07, 16.5961)
 mesh = ExtResource("6_m5aj5")
 skeleton = NodePath("../..")
 
@@ -170,7 +180,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_uk5b4")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 2.31026, 2.42929)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 2.95923, 2.42929)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("7_kwfmu")
@@ -199,5 +209,270 @@ script = ExtResource("12_6kkdw")
 [node name="Label3D" type="Label3D" parent="PuertaAOficina"]
 transform = Transform3D(3.59067, 0, 0, 0, 3.59067, 0, 0, 0, 3.59067, 0, 1.39395, 0)
 text = "A Oficina"
+
+[node name="Escenario_Entrada_Techo" parent="." instance=ExtResource("13_5en06")]
+transform = Transform3D(3000, 0, 0, 0, 1550, 0, 0, 0, 3000, 0.285562, 7.26079, 1.04702)
+
+[node name="Escenario_Entrada_Suelo" parent="." instance=ExtResource("13_5en06")]
+transform = Transform3D(3000, 0, 0, 0, 1550, 0, 0, 0, 3000, 0.285562, 0.105621, 1.04702)
+
+[node name="Escenario_Entrada_Pared" parent="." instance=ExtResource("14_rfupu")]
+transform = Transform3D(-8.74228e-06, 0, 2800, 0, 700, 0, -200, 0, -0.000122392, 0.373797, 0.585, 15.7619)
+
+[node name="Escenario_Entrada_Pared2" parent="." instance=ExtResource("14_rfupu")]
+transform = Transform3D(-8.74228e-06, 0, 2800, 0, 700, 0, -200, 0, -0.000122392, -0.155412, 0.470078, -13.8128)
+
+[node name="Escenario_Entrada_Pared3" parent="." instance=ExtResource("14_rfupu")]
+transform = Transform3D(200, 0, 0, 0, 700, 0, 0, 0, 2800, -15.8124, 0.585, 1.0594)
+visible = false
+
+[node name="Escenario_Entrada_Pared4" parent="." instance=ExtResource("14_rfupu")]
+transform = Transform3D(200, 0, 0, 0, 700, 0, 0, 0, 2800, 14.6413, 0.585, 1.0594)
+
+[node name="Escenario_Entrada_EscalerasIzquierda" parent="." instance=ExtResource("15_oo4bv")]
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, -12.8279, 0.882173, -11.2815)
+
+[node name="Escenario_Entrada_EscalerasDerecha" parent="." instance=ExtResource("16_oodld")]
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, -12.828, 0.916659, 13.2974)
+
+[node name="Escenario_Entrada_Escritorio" parent="." instance=ExtResource("17_yjjol")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -8.866, 0.892229, -7.441)
+
+[node name="Escenario_Entrada_Silla" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(36.6423, 0, -71.115, 0, 80, 0, 71.115, 0, 36.6423, -9.9574, 0.867025, -6.95376)
+
+[node name="Escenario_Entrada_Silla2" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 6.0542, 0.867025, -8.95376)
+
+[node name="Escenario_Entrada_Silla3" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 6.0542, 0.867025, -9.95376)
+
+[node name="Escenario_Entrada_Silla4" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 6.0542, 0.867025, -10.9538)
+
+[node name="Escenario_Entrada_Silla5" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 6.0542, 0.867025, -11.9538)
+
+[node name="Escenario_Entrada_Silla6" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 7.0542, 0.867025, -8.95376)
+
+[node name="Escenario_Entrada_Silla7" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 7.0542, 0.867025, -9.95376)
+
+[node name="Escenario_Entrada_Silla8" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 7.0542, 0.867025, -10.9538)
+
+[node name="Escenario_Entrada_Silla9" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 7.0542, 0.867025, -11.9538)
+
+[node name="Escenario_Entrada_Silla10" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 8.0542, 0.867025, -8.95376)
+
+[node name="Escenario_Entrada_Silla11" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 8.0542, 0.867025, -9.95376)
+
+[node name="Escenario_Entrada_Silla12" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 8.0542, 0.867025, -10.9538)
+
+[node name="Escenario_Entrada_Silla13" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 8.0542, 0.867025, -11.9538)
+
+[node name="Escenario_Entrada_Silla14" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 9.0542, 0.867025, -8.95376)
+
+[node name="Escenario_Entrada_Silla15" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 9.0542, 0.867025, -9.95376)
+
+[node name="Escenario_Entrada_Silla16" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 9.0542, 0.867025, -10.9538)
+
+[node name="Escenario_Entrada_Silla17" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 9.0542, 0.867025, -11.9538)
+
+[node name="Escenario_Entrada_Silla18" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 10.0542, 0.867025, -8.95376)
+
+[node name="Escenario_Entrada_Silla19" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 10.0542, 0.867025, -9.95376)
+
+[node name="Escenario_Entrada_Silla20" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 10.0542, 0.867025, -10.9538)
+
+[node name="Escenario_Entrada_Silla21" parent="." instance=ExtResource("18_gtr52")]
+transform = Transform3D(-3.49691e-06, 0, -80, 0, 80, 0, 80, 0, -3.49691e-06, 10.0542, 0.867025, -11.9538)
+
+[node name="Escenario_Entrada_PilarCilindricoGrande" parent="." instance=ExtResource("19_dhj4h")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 8.364, 0.719429, 6.36504)
+
+[node name="Escenario_Entrada_PilarCilindricoGrande2" parent="." instance=ExtResource("19_dhj4h")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 8.364, 0.719429, -5.63496)
+
+[node name="Escenario_Entrada_PilarCilindricoGrande3" parent="." instance=ExtResource("19_dhj4h")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, -0.636002, 0.719429, -10.635)
+
+[node name="Escenario_Entrada_PilarCilindricoGrande4" parent="." instance=ExtResource("19_dhj4h")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, -0.636002, 0.719429, 0.365039)
+
+[node name="Escenario_Entrada_PilarCilindricoGrande5" parent="." instance=ExtResource("19_dhj4h")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, -0.636002, 0.719429, 11.365)
+
+[node name="Escenario_Entrada_BarandaCorta" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 7.41333)
+
+[node name="Escenario_Entrada_BarandaCorta2" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 6.5612)
+
+[node name="Escenario_Entrada_BarandaCorta3" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 5.71687)
+
+[node name="Escenario_Entrada_BarandaCorta4" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 4.87614)
+
+[node name="Escenario_Entrada_BarandaCorta42" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.18557e-06, 0, 60, 0, 60, 0, -50, 0, -2.62268e-06, -4.75821, 2.61903, 13.976)
+
+[node name="Escenario_Entrada_BarandaCorta43" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 13.3267)
+
+[node name="Escenario_Entrada_BarandaCorta44" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 12.486)
+
+[node name="Escenario_Entrada_BarandaCorta5" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 4.03319)
+
+[node name="Escenario_Entrada_BarandaCorta36" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 11.6329)
+
+[node name="Escenario_Entrada_BarandaCorta37" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 10.7807)
+
+[node name="Escenario_Entrada_BarandaCorta38" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 9.93641)
+
+[node name="Escenario_Entrada_BarandaCorta39" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 9.09568)
+
+[node name="Escenario_Entrada_BarandaCorta40" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 8.25274)
+
+[node name="Escenario_Entrada_BarandaCorta6" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 3.19063)
+
+[node name="Escenario_Entrada_BarandaCorta7" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 2.34615)
+
+[node name="Escenario_Entrada_BarandaCorta8" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 1.49976)
+
+[node name="Escenario_Entrada_BarandaCorta9" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, 0.657184)
+
+[node name="Escenario_Entrada_BarandaCorta10" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -0.188335)
+
+[node name="Escenario_Entrada_BarandaCorta11" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -1.03035)
+
+[node name="Escenario_Entrada_BarandaCorta12" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -1.87587)
+
+[node name="Escenario_Entrada_BarandaCorta13" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -2.71805)
+
+[node name="Escenario_Entrada_BarandaCorta14" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -3.56388)
+
+[node name="Escenario_Entrada_BarandaCorta15" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -4.40537)
+
+[node name="Escenario_Entrada_BarandaCorta16" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -5.24773)
+
+[node name="Escenario_Entrada_BarandaCorta17" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -6.09323)
+
+[node name="Escenario_Entrada_BarandaCorta18" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -6.93948)
+
+[node name="Escenario_Entrada_BarandaCorta19" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -7.78162)
+
+[node name="Escenario_Entrada_BarandaCorta20" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -8.62399)
+
+[node name="Escenario_Entrada_BarandaCorta21" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -9.47082)
+
+[node name="Escenario_Entrada_BarandaCorta22" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.75821, 2.61903, -10.3145)
+
+[node name="Escenario_Entrada_BarandaCorta23" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-2.62268e-06, 0, 60, 0, 60, 0, -60, 0, -2.62268e-06, -4.76063, 2.61903, -11.1597)
+
+[node name="Escenario_Entrada_BarandaCorta24" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-60, 5.24536e-06, 5.24537e-06, 5.24536e-06, 60, 5.24536e-06, -5.24537e-06, 5.24537e-06, -60, -6.46119, 2.61903, -11.9638)
+
+[node name="Escenario_Entrada_BarandaCorta29" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-60, 5.24536e-06, 5.24537e-06, 5.24536e-06, 60, 5.24536e-06, -5.24537e-06, 5.24537e-06, -60, -5.62034, 2.61903, -11.9638)
+
+[node name="Escenario_Entrada_BarandaCorta35" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-60, 5.24536e-06, 5.24537e-06, 5.24536e-06, 60, 5.24536e-06, -5.24537e-06, 5.24537e-06, -60, -4.78207, 2.61903, -11.9638)
+
+[node name="Escenario_Entrada_BarandaCorta25" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-60, 5.24536e-06, 5.24537e-06, 5.24536e-06, 60, 5.24536e-06, -5.24537e-06, 5.24537e-06, -60, -7.30311, 2.61903, -11.9638)
+
+[node name="Escenario_Entrada_BarandaCorta26" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-60, 5.24536e-06, 5.24537e-06, 5.24536e-06, 60, 5.24536e-06, -5.24537e-06, 5.24537e-06, -60, -8.14985, 2.61903, -11.9638)
+
+[node name="Escenario_Entrada_BarandaCorta27" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-60, 5.24536e-06, 5.24537e-06, 5.24536e-06, 60, 5.24536e-06, -5.24537e-06, 5.24537e-06, -60, -8.99801, 2.61903, -11.9638)
+
+[node name="Escenario_Entrada_BarandaCorta28" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(-60, 5.24536e-06, 9.05975e-06, 5.24536e-06, 60, 5.24536e-06, -9.05975e-06, 5.24537e-06, -60, -9.84207, 2.61903, -11.9582)
+
+[node name="Escenario_Entrada_BarandaCorta30" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(55, -5.24536e-06, 1.0842e-19, 4.80825e-06, 60, 5.24536e-06, -4.20351e-13, -5.24536e-06, 60, -5.52816, 2.61903, 13.9844)
+
+[node name="Escenario_Entrada_BarandaCorta31" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(60, -5.24536e-06, 5.42101e-20, 5.24536e-06, 60, 5.24536e-06, -4.58564e-13, -5.24536e-06, 60, -6.39218, 2.61903, 13.9844)
+
+[node name="Escenario_Entrada_BarandaCorta32" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(60, -5.24536e-06, 5.42101e-20, 5.24536e-06, 60, 5.24536e-06, -4.58564e-13, -5.24536e-06, 60, -7.23579, 2.61903, 13.9844)
+
+[node name="Escenario_Entrada_BarandaCorta33" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(60, -5.24536e-06, 5.42101e-20, 5.24536e-06, 60, 5.24536e-06, -4.58564e-13, -5.24536e-06, 60, -8.07133, 2.61903, 13.9844)
+
+[node name="Escenario_Entrada_BarandaCorta34" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(60, -5.24536e-06, 5.42101e-20, 5.24536e-06, 60, 5.24536e-06, -4.58564e-13, -5.24536e-06, 60, -8.92989, 2.61903, 13.9844)
+
+[node name="Escenario_Entrada_BarandaCorta41" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(60, -5.24536e-06, 5.42101e-20, 5.24536e-06, 60, 5.24536e-06, -4.58564e-13, -5.24536e-06, 60, -9.7803, 2.61903, 13.9844)
+
+[node name="Escenario_Entrada_BarandaCorta45" parent="." instance=ExtResource("20_xfh0s")]
+transform = Transform3D(60, -5.24536e-06, 5.42101e-20, 5.24536e-06, 60, 5.24536e-06, -4.58564e-13, -5.24536e-06, 60, -10.6239, 2.61903, 13.9844)
+
+[node name="Escenario_Entrada_Entrepiso" parent="." instance=ExtResource("13_5en06")]
+transform = Transform3D(2250, 0, 0, 0, 150, 0, 0, 0, 3000, 6.20764, 2.57051, 1.7404)
+
+[node name="Escenario_Entrada_EntrepisoIzq" parent="." instance=ExtResource("13_5en06")]
+transform = Transform3D(535.5, 0, 0, 0, 150, 0, 0, 0, 532.5, -7.82394, 2.57051, -14.5675)
+
+[node name="Escenario_Entrada_EntrepisoDer" parent="." instance=ExtResource("13_5en06")]
+transform = Transform3D(535.5, 0, 0, 0, 150, 0, 0, 0, 532.5, -7.82394, 2.57051, 16.6822)
+
+[node name="Escenario_Entraada_PuertaNegra" parent="." instance=ExtResource("21_q66pv")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 1.95339, 0.900332, -13.4867)
+
+[node name="Escenario_Entraada_PuertaNegra2" parent="." instance=ExtResource("21_q66pv")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 3.73829, 2.61664, -13.4867)
+
+[node name="Escenario_Entraada_PuertaNegra3" parent="." instance=ExtResource("21_q66pv")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 9.07964, 2.51279, -13.4698)
+
+[node name="Escenario_Entraada_PuertaNegra4" parent="." instance=ExtResource("21_q66pv")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -14.2656, 5.12424, -13.4867)
+
+[node name="Escenario_Entraada_PuertaNegra5" parent="." instance=ExtResource("21_q66pv")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -14.2656, 5.12424, 15.4114)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

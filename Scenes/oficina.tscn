@@ -1,14 +1,65 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6syw644kql1k"]
+[gd_scene load_steps=70 format=3 uid="uid://c6syw644kql1k"]
 
 [ext_resource type="Script" path="res://Scenes/oficina.gd" id="1_b3pie"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="1_smdut"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_0i4kw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_tkcb8"]
+[ext_resource type="PackedScene" uid="uid://c84wklcvydoow" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Impresora.glb" id="4_5ywds"]
+[ext_resource type="PackedScene" uid="uid://cjlsxk422fdf4" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared4.glb" id="4_aw2eq"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_nlc8f"]
+[ext_resource type="PackedScene" uid="uid://c3ijloq7h81hq" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Zocalo2.glb" id="5_f8wk0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_hkdgx"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_3hnwq"]
 [ext_resource type="AudioStream" uid="uid://x7by45sd04cb" path="res://Assets/sounds/music/lost.wav" id="7_ac3xo"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="9_g526s"]
+[ext_resource type="PackedScene" uid="uid://wmmdo8i8v8oo" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_SueloTecho1.glb" id="10_7kvr5"]
+[ext_resource type="PackedScene" uid="uid://ct15dwgmayedv" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Books1.glb" id="10_q6qhl"]
+[ext_resource type="PackedScene" uid="uid://dk4i6btiolcy7" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared1.glb" id="11_hgk22"]
+[ext_resource type="PackedScene" uid="uid://babe1j7gtjgud" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Escritorio1.glb" id="11_v3blu"]
+[ext_resource type="PackedScene" uid="uid://ueydlfap74pl" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared2.glb" id="12_jkqyp"]
+[ext_resource type="PackedScene" uid="uid://bwt6135eook6b" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared3.glb" id="14_u6h1x"]
+[ext_resource type="PackedScene" uid="uid://b3mtdj3uxmx13" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Laptop.glb" id="14_yc615"]
+[ext_resource type="PackedScene" uid="uid://85hjr7oievko" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared5.glb" id="15_msnya"]
+[ext_resource type="PackedScene" uid="uid://ch3x0hyih0yxk" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Zocalo1.glb" id="17_4k0hr"]
+[ext_resource type="PackedScene" uid="uid://dp8itw8xc0qdw" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Zocalo3.glb" id="18_6kgx0"]
+[ext_resource type="PackedScene" uid="uid://bnuvh07cpcrmn" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Zocalo4.glb" id="19_iicir"]
+[ext_resource type="PackedScene" uid="uid://7lmfglqavcvf" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Zocalo5.glb" id="20_w0rsn"]
+[ext_resource type="PackedScene" uid="uid://03klgu8v0pru" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Zocalo6.glb" id="21_0t1vw"]
+[ext_resource type="PackedScene" uid="uid://l2yid1sxgp7r" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Ventana.glb" id="22_6uwn7"]
+[ext_resource type="PackedScene" uid="uid://dxqvhqvgmsqa5" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_PuertaMarron1.glb" id="23_r76dw"]
+[ext_resource type="PackedScene" uid="uid://cp3jfhap14jip" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Cuadro1.glb" id="24_ki883"]
+[ext_resource type="PackedScene" uid="uid://7lsawn4bit2u" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Cuadro2.glb" id="25_tlcgp"]
+[ext_resource type="PackedScene" uid="uid://bfyc4h2ouhjhh" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Cuadro3.glb" id="26_wogqa"]
+[ext_resource type="PackedScene" uid="uid://fj1cdch7r3xv" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Cuadro4.glb" id="27_kj58a"]
+[ext_resource type="PackedScene" uid="uid://va533m6lm1ds" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Cuadro5.glb" id="28_whkv5"]
+[ext_resource type="PackedScene" uid="uid://c3tex50qcehg8" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pantalla.glb" id="29_mjhg5"]
+[ext_resource type="PackedScene" uid="uid://d05xelfsm6ilv" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla2.glb" id="30_fg6sr"]
+[ext_resource type="PackedScene" uid="uid://bgo5wf2sl4mk2" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla1.glb" id="30_mwqey"]
+[ext_resource type="PackedScene" uid="uid://stxu4pit5rr4" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla3.glb" id="31_po87q"]
+[ext_resource type="PackedScene" uid="uid://cost75iw22ec6" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla4.glb" id="32_fo350"]
+[ext_resource type="PackedScene" uid="uid://c864t3yc7xpkm" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Telefono1.glb" id="36_41h5s"]
+[ext_resource type="PackedScene" uid="uid://dutk364chgdsh" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Portalapices.glb" id="37_2ijg1"]
+[ext_resource type="PackedScene" uid="uid://4rkhxb8ihnl5" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Escritorio2.glb" id="39_juw5y"]
+[ext_resource type="PackedScene" uid="uid://crvjpp0hoj3mj" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Papeles2.glb" id="41_80bu0"]
+[ext_resource type="PackedScene" uid="uid://dvenabqavf26f" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Planta1.glb" id="42_y2pfe"]
+[ext_resource type="PackedScene" uid="uid://bf7lfpj2xoxyi" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Escritorio3.glb" id="43_q7rm2"]
+[ext_resource type="PackedScene" uid="uid://deyheyjy4qaru" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Planta2.glb" id="44_um3rt"]
+[ext_resource type="PackedScene" uid="uid://dqrg78t57juby" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla11.glb" id="45_rk1yd"]
+[ext_resource type="PackedScene" uid="uid://hnn3wbmdkta0" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Laptop2.glb" id="46_gjwtr"]
+[ext_resource type="PackedScene" uid="uid://7gsrcbtpnox" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Papeles3.glb" id="47_pxdvo"]
+[ext_resource type="PackedScene" uid="uid://pv67m4w0c0vr" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Portalapices2.glb" id="48_uvts5"]
+[ext_resource type="PackedScene" uid="uid://c1rcbsqxg41dc" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Estante1.glb" id="49_1dnm3"]
+[ext_resource type="PackedScene" uid="uid://daj74lk7sfeoh" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Books2.glb" id="50_iroha"]
+[ext_resource type="PackedScene" uid="uid://k6hip1ctksel" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Books3.glb" id="51_0wdts"]
+[ext_resource type="PackedScene" uid="uid://dkbwiymnl7mub" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Papeles1.glb" id="52_m5b0x"]
+[ext_resource type="PackedScene" uid="uid://b8du2lyvu6qlp" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Mesa.glb" id="53_ucrip"]
+[ext_resource type="PackedScene" uid="uid://byw6ly1brhqaf" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla5.glb" id="54_sxml4"]
+[ext_resource type="PackedScene" uid="uid://cfgvgwecmcvrx" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla6.glb" id="55_5y7dt"]
+[ext_resource type="PackedScene" uid="uid://ck0htw2al7vn" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla7.glb" id="56_5bbrq"]
+[ext_resource type="PackedScene" uid="uid://ba8tttc2x6jpf" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla8.glb" id="57_bw5ej"]
+[ext_resource type="PackedScene" uid="uid://c15vygp7cr5vg" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla9.glb" id="58_tw23s"]
+[ext_resource type="PackedScene" uid="uid://dn5fgmlu2kkxn" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla10.glb" id="59_84g3d"]
+[ext_resource type="PackedScene" uid="uid://d20s8axgeutca" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_SueloTecho2.glb" id="60_0rpe2"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_86hwj"]
 data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3)
@@ -92,9 +143,11 @@ scale = Vector2(11.9658, 6.83689)
 texture = ExtResource("9_g526s")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732987, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(9.96295, 0, 0, 0, 1.60523, 0, 0, 0, 9.96295, -15, 0, 15)
+transform = Transform3D(9.96295, 0, 0, 0, 1.60523, 0, 0, 0, 7.42786, -15.0129, -0.163325, 11.1101)
 mesh = ExtResource("1_smdut")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
@@ -103,7 +156,7 @@ mesh = ExtResource("1_smdut")
 shape = SubResource("ConcavePolygonShape3D_86hwj")
 
 [node name="Player" parent="." instance=ExtResource("2_0i4kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.902524, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.43468, 1.33808, 7.00455)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
@@ -116,10 +169,10 @@ camera_3d_resource = SubResource("Resource_pnhfv")
 environment = SubResource("Environment_qaj4q")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.140366, 0.9901, 0, -0.9901, 0.140366, 0, 3.25162, 0)
+transform = Transform3D(1, 0, 0, 0, 0.140366, 0.9901, 0, -0.9901, 0.140366, 0, 4.42966, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 2.41576, 3.29078)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 6.72158, 2.85132, 10.2953)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("6_3hnwq")
@@ -132,5 +185,163 @@ autoplay = true
 libraries = {
 "": SubResource("AnimationLibrary_tpwg0")
 }
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.481348, 0.746736, 0.0337292)
+
+[node name="Escenario_Oficina_SueloTecho1" parent="Node3D" instance=ExtResource("10_7kvr5")]
+
+[node name="Escenario_Oficina_Pared1" parent="Node3D" instance=ExtResource("11_hgk22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26415, 2.10577, 2.65233)
+
+[node name="Escenario_Oficina_Pared2" parent="Node3D" instance=ExtResource("12_jkqyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66835, 2.12554, 0.0831376)
+
+[node name="Escenario_Oficina_Pared3" parent="Node3D" instance=ExtResource("14_u6h1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000927448, 2.11311, -2.62102)
+
+[node name="Escenario_Oficina_Pared4" parent="Node3D" instance=ExtResource("4_aw2eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78454, 2.02074, -5.30181)
+
+[node name="Escenario_Oficina_Pared5" parent="Node3D" instance=ExtResource("15_msnya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32379, 1.98844, -2.59421)
+
+[node name="Escenario_Oficina_Zocalo1" parent="Node3D" instance=ExtResource("17_4k0hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0626524, 0.291066, 4.86616)
+
+[node name="Escenario_Oficina_Zocalo2" parent="Node3D" instance=ExtResource("5_f8wk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0196194, 0.279904, -0.886367)
+
+[node name="Escenario_Oficina_Zocalo3" parent="Node3D" instance=ExtResource("18_6kgx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6148, 0.296433, 0.13634)
+
+[node name="Escenario_Oficina_Zocalo4" parent="Node3D" instance=ExtResource("19_iicir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16927, 0.305417, 2.70702)
+
+[node name="Escenario_Oficina_Zocalo5" parent="Node3D" instance=ExtResource("20_w0rsn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24231, 0.281626, -0.00206779)
+
+[node name="Escenario_Oficina_Zocalo6" parent="Node3D" instance=ExtResource("21_0t1vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.66726, 0.289673, -5.21154)
+
+[node name="Escenario_Oficina_Ventana" parent="Node3D" instance=ExtResource("22_6uwn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69459, 1.89815, -5.24765)
+
+[node name="Escenario_Oficina_PuertaMarron1" parent="Node3D" instance=ExtResource("23_r76dw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.3206, 4.06592, 1.0377, 0.186551)
+
+[node name="Escenario_Oficina_Cuadro1" parent="Node3D" instance=ExtResource("24_ki883")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18072, 2.59039, 1.89578)
+
+[node name="Escenario_Oficina_Cuadro2" parent="Node3D" instance=ExtResource("25_tlcgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.19684, 2.95281, 3.44378)
+
+[node name="Escenario_Oficina_Cuadro3" parent="Node3D" instance=ExtResource("26_wogqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19135, 2.64841, 2.04713)
+
+[node name="Escenario_Oficina_Cuadro4" parent="Node3D" instance=ExtResource("27_kj58a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15893, 2.21381, 0.0665082)
+
+[node name="Escenario_Oficina_Cuadro5" parent="Node3D" instance=ExtResource("28_whkv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19135, 2.64841, -1.73768)
+
+[node name="Escenario_Oficina_Pantalla" parent="Node3D" instance=ExtResource("29_mjhg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243322, 2.82134, -1.44603)
+
+[node name="Escenario_Oficina_Silla1" parent="Node3D" instance=ExtResource("30_mwqey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24024, 0.685992, 2.35816)
+
+[node name="Escenario_Oficina_Silla2" parent="Node3D" instance=ExtResource("30_fg6sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66769, 0.510463, 1.77287)
+
+[node name="Escenario_Oficina_Silla3" parent="Node3D" instance=ExtResource("31_po87q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66769, 0.510463, 2.94055)
+
+[node name="Escenario_Oficina_Silla4" parent="Node3D" instance=ExtResource("32_fo350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5817, 0.510463, 0.719638)
+
+[node name="Escenario_Oficina_Escritorio1" parent="Node3D" instance=ExtResource("11_v3blu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90848, 0.539092, 2.39595)
+
+[node name="Escenario_Oficina_Laptop" parent="Node3D" instance=ExtResource("14_yc615")]
+transform = Transform3D(1.09224, 0, 0.497003, 0, 1.2, 0, -0.497003, 0, 1.09224, 2.86729, 1.16305, 2.11703)
+
+[node name="Escenario_Oficina_Telefono1" parent="Node3D" instance=ExtResource("36_41h5s")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 2.99837, 1.02707, 2.68723)
+
+[node name="Escenario_Oficina_Portalapices" parent="Node3D" instance=ExtResource("37_2ijg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90591, 1.05642, 3.02567)
+
+[node name="Escenario_Oficina_Books1" parent="Node3D" instance=ExtResource("10_q6qhl")]
+transform = Transform3D(1, 0, 0, 0, 0.999903, -0.0140844, 0, 0.0140844, 0.999903, 2.71697, 0.965506, 2.77698)
+
+[node name="Escenario_Oficina_Escritorio2" parent="Node3D" instance=ExtResource("39_juw5y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11138, 0.549279, 0.683001)
+
+[node name="Escenario_Oficina_Papeles2" parent="Node3D" instance=ExtResource("41_80bu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8171, 0.972766, 0.677905)
+
+[node name="Escenario_Oficina_Impresora" parent="Node3D" instance=ExtResource("4_5ywds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26641, 1.05028, 0.681715)
+
+[node name="Escenario_Oficina_Planta1" parent="Node3D" instance=ExtResource("42_y2pfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80358, 0.757043, 3.97136)
+
+[node name="Escenario_Oficina_Escritorio3" parent="Node3D" instance=ExtResource("43_q7rm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8737, 0.452312, -3.34116)
+
+[node name="Escenario_Oficina_Planta2" parent="Node3D" instance=ExtResource("44_um3rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56539, 0.744599, -4.79124)
+
+[node name="Escenario_Oficina_Silla11" parent="Node3D" instance=ExtResource("45_rk1yd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25887, 0.681518, -3.8052)
+
+[node name="Escenario_Oficina_Laptop2" parent="Node3D" instance=ExtResource("46_gjwtr")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.26037, 1.00546, -3.30996)
+
+[node name="Escenario_Oficina_Papeles3" parent="Node3D" instance=ExtResource("47_pxdvo")]
+transform = Transform3D(0.239907, 0, -0.970798, 0, 1, 0, 0.970798, 0, 0.239907, -4.34559, 0.863458, -3.30252)
+
+[node name="Escenario_Oficina_Portalapices2" parent="Node3D" instance=ExtResource("48_uvts5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65311, 0.954901, -3.19681)
+
+[node name="Escenario_Oficina_Estante1" parent="Node3D" instance=ExtResource("49_1dnm3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514001, 0.725026, -2.46421)
+
+[node name="Escenario_Oficina_Books3" parent="Node3D" instance=ExtResource("51_0wdts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.393855, 1.47811, -2.3752)
+
+[node name="Escenario_Oficina_Books2" parent="Node3D" instance=ExtResource("50_iroha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.395453, 1.49194, -3.35595)
+
+[node name="Escenario_Oficina_Papeles4" parent="Node3D" instance=ExtResource("47_pxdvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494114, 1.32952, -1.43913)
+
+[node name="Escenario_Oficina_Papeles1" parent="Node3D" instance=ExtResource("52_m5b0x")]
+transform = Transform3D(0.974579, 0, -0.22405, 0, 1, 0, 0.22405, 0, 0.974579, -0.511327, 1.32849, -1.03502)
+
+[node name="Escenario_Oficina_Mesa" parent="Node3D" instance=ExtResource("53_ucrip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05788, 0.453739, 1.07911)
+
+[node name="Escenario_Oficina_Silla5" parent="Node3D" instance=ExtResource("54_sxml4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5495, 0.541281, 1.7105)
+
+[node name="Escenario_Oficina_Silla6" parent="Node3D" instance=ExtResource("55_5y7dt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57461, 0.541281, 0.653508)
+
+[node name="Escenario_Oficina_Silla7" parent="Node3D" instance=ExtResource("56_5bbrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56221, 0.541281, 0.640793)
+
+[node name="Escenario_Oficina_Silla8" parent="Node3D" instance=ExtResource("57_bw5ej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5619, 0.541281, 1.70849)
+
+[node name="Escenario_Oficina_Silla9" parent="Node3D" instance=ExtResource("58_tw23s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60862, 0.541281, -0.325211)
+
+[node name="Escenario_Oficina_Silla10" parent="Node3D" instance=ExtResource("59_84g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55364, 0.541281, -0.325211)
+
+[node name="Escenario_Oficina_SueloTecho2" parent="Node3D" instance=ExtResource("60_0rpe2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.97409, 0)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

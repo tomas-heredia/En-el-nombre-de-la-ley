@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmf8c24mgc1ur"]
+[gd_scene load_steps=38 format=3 uid="uid://dmf8c24mgc1ur"]
 
 [ext_resource type="Script" path="res://Scripts/mundo.gd" id="1_mit0t"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_vrp4t"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="3_6amup"]
+[ext_resource type="Texture2D" uid="uid://byjk8oefcdw47" path="res://Assets/Textures/SkyBox.png" id="3_ifk7s"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_gj51f"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_f1si3"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_hy2kc"]
@@ -11,16 +12,31 @@
 [ext_resource type="PackedScene" uid="uid://p6v28xrqgp56" path="res://Scenes/npc.tscn" id="9_bat68"]
 [ext_resource type="PackedScene" uid="uid://bqk73ddy5gpmx" path="res://Scenes/puerta.tscn" id="10_j3fso"]
 [ext_resource type="AudioStream" uid="uid://x7by45sd04cb" path="res://Assets/sounds/music/lost.wav" id="11_u8jy0"]
+[ext_resource type="PackedScene" uid="uid://bttj4nde1m2fu" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Arbol.glb" id="12_jf5s7"]
+[ext_resource type="PackedScene" uid="uid://bmmxp2c6v6168" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Arbusto.glb" id="13_iecwn"]
+[ext_resource type="PackedScene" uid="uid://ckuv8dr7ma1vh" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BolsaBasura.glb" id="14_m1qs1"]
+[ext_resource type="PackedScene" uid="uid://bpmepqjxdyjyv" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BotellaG.glb" id="15_msgcq"]
+[ext_resource type="PackedScene" uid="uid://bpi5mauh1t4w2" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BotellaS.glb" id="16_astl6"]
+[ext_resource type="PackedScene" uid="uid://bcmkm4c8evksv" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_CajaHamburguesa.glb" id="17_kh6k5"]
+[ext_resource type="PackedScene" uid="uid://bhfue7eybge50" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_CajaPizza.glb" id="18_7o2d7"]
+[ext_resource type="PackedScene" uid="uid://3n6aqh38p523" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Edificio1.glb" id="19_05uvn"]
+[ext_resource type="PackedScene" uid="uid://4c6b2gui4p58" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Edificio2.glb" id="20_d8uy0"]
+[ext_resource type="PackedScene" uid="uid://dgcyfwqnuvbk" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Fuente.glb" id="21_5p1bt"]
+[ext_resource type="PackedScene" uid="uid://bdsqwwi6wqlsd" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Manzana.glb" id="22_wd2ru"]
+[ext_resource type="PackedScene" uid="uid://2xf8hvhjlnw4" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Sillas.glb" id="23_lqxqa"]
+[ext_resource type="PackedScene" uid="uid://8phleivu1uf0" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Suelo.glb" id="24_kwgja"]
+[ext_resource type="PackedScene" uid="uid://42pg6b8cisuu" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Vaso.glb" id="25_8k05k"]
+[ext_resource type="PackedScene" uid="uid://dhd5honi3baix" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_EdificioLegislatura.glb" id="27_bh2u6"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgira"]
-sky_top_color = Color(0.117647, 0.462745, 0.74902, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w5xyq"]
+panorama = ExtResource("3_ifk7s")
 
-[sub_resource type="Sky" id="Sky_qwx0w"]
-sky_material = SubResource("ProceduralSkyMaterial_sgira")
+[sub_resource type="Sky" id="Sky_yn0cb"]
+sky_material = SubResource("PanoramaSkyMaterial_w5xyq")
 
-[sub_resource type="Environment" id="Environment_qaj4q"]
+[sub_resource type="Environment" id="Environment_vuoyc"]
 background_mode = 2
-sky = SubResource("Sky_qwx0w")
+sky = SubResource("Sky_yn0cb")
 
 [sub_resource type="Resource" id="Resource_mev1u"]
 script = ExtResource("5_f1si3")
@@ -102,7 +118,7 @@ texture = ExtResource("2_vrp4t")
 transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.984278, -0.000557113, -0.99965, -0.0264666, -0.942749, 9.17101, 4.40892)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_qaj4q")
+environment = SubResource("Environment_vuoyc")
 
 [node name="Player" parent="." instance=ExtResource("3_6amup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 0.797019, -0.861486)
@@ -147,5 +163,203 @@ autoplay = true
 libraries = {
 "": SubResource("AnimationLibrary_tpwg0")
 }
+
+[node name="Escenario_Exterior_Arbol" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.11144, 0.795237, 3.57651)
+
+[node name="Escenario_Exterior_Arbol4" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.6412, 0.795237, 6.68736)
+
+[node name="Escenario_Exterior_Arbol5" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.469, 0.795237, 3.19547)
+
+[node name="Escenario_Exterior_Arbol6" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.95, 0.795237, 15.3241)
+
+[node name="Escenario_Exterior_Arbol7" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 14.2471, 0.795237, 13.2086)
+
+[node name="Escenario_Exterior_Arbol8" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.4538, 0.795237, 15.258)
+
+[node name="Escenario_Exterior_Arbol9" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.60353, 0.795237, 15.258)
+
+[node name="Escenario_Exterior_Arbol10" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.00855, 0.795237, 11.4237)
+
+[node name="Escenario_Exterior_Arbol11" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -7.96555, 0.795237, 15.3241)
+
+[node name="Escenario_Exterior_Arbol12" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.4442, 0.795237, 9.50652)
+
+[node name="Escenario_Exterior_Arbol13" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.4442, 0.795237, 3.95336)
+
+[node name="Escenario_Exterior_Arbol14" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.4442, 0.795237, 6.79605)
+
+[node name="Escenario_Exterior_Arbol15" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.4442, 0.795237, 12.3492)
+
+[node name="Escenario_Exterior_Arbol16" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.4442, 0.795237, 15.1919)
+
+[node name="Escenario_Exterior_Arbol17" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.1058, 0.795237, -13.0391)
+
+[node name="Escenario_Exterior_Arbol18" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.7285, 0.795237, -13.0391)
+
+[node name="Escenario_Exterior_Arbol19" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.1058, 0.795237, -10.7007)
+
+[node name="Escenario_Exterior_Arbol20" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.7285, 0.795237, -10.7007)
+
+[node name="Escenario_Exterior_Arbol21" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.1058, 0.795237, -8.27228)
+
+[node name="Escenario_Exterior_Arbol23" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -9.74326, 0.795237, -12.2305)
+
+[node name="Escenario_Exterior_Arbol24" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.39096, 0.795237, -12.2998)
+
+[node name="Escenario_Exterior_Arbol22" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.7285, 0.795237, -8.27228)
+
+[node name="Escenario_Exterior_Arbol2" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 5.53244, 0.444567, 5.77388)
+
+[node name="Escenario_Exterior_Arbol3" parent="." instance=ExtResource("12_jf5s7")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.97393, 0.444567, 4.15037)
+
+[node name="Escenario_Exterior_Arbusto" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.45791, 0.848997, 5.27402)
+
+[node name="Escenario_Exterior_Arbusto2" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.5323, 0.848997, 5.5791)
+
+[node name="Escenario_Exterior_Arbusto4" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.834, 0.848997, 11.5853)
+
+[node name="Escenario_Exterior_Arbusto5" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.9441, 0.848997, 15.1495)
+
+[node name="Escenario_Exterior_Arbusto6" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 4.9393, 0.848997, 15.1495)
+
+[node name="Escenario_Exterior_Arbusto7" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.32989, 0.848997, 13.6066)
+
+[node name="Escenario_Exterior_Arbusto8" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -8.41686, 0.848997, 9.45427)
+
+[node name="Escenario_Exterior_Arbusto9" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -10.2235, 0.848997, 9.45427)
+
+[node name="Escenario_Exterior_Arbusto10" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.2139, 0.848997, 9.45427)
+
+[node name="Escenario_Exterior_Arbusto11" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -9.25128, 0.848997, -8.77815)
+
+[node name="Escenario_Exterior_Arbusto12" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -10.315, 0.848997, -9.61231)
+
+[node name="Escenario_Exterior_Arbusto13" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.08001, 0.848997, -8.97753)
+
+[node name="Escenario_Exterior_Arbusto14" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 10.0129, 0.848997, -9.85157)
+
+[node name="Escenario_Exterior_Arbusto3" parent="." instance=ExtResource("13_iecwn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.8808, 0.848997, 4.53086)
+
+[node name="Escenario_Exterior_BolsaBasura" parent="." instance=ExtResource("14_m1qs1")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 2.81551, 0.664043, 2.81464)
+
+[node name="Escenario_Exterior_BolsaBasura4" parent="." instance=ExtResource("14_m1qs1")]
+transform = Transform3D(32.9167, 0, 52.0168, 0, 61.557, 0, -52.0168, 0, 32.9167, 3.33131, 0.664043, 2.63644)
+
+[node name="Escenario_Exterior_BolsaBasura2" parent="." instance=ExtResource("14_m1qs1")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -7.94737, 0.664043, 3.78878)
+
+[node name="Escenario_Exterior_BolsaBasura3" parent="." instance=ExtResource("14_m1qs1")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -7.77792, 0.664043, 14.7566)
+
+[node name="Escenario_Exterior_BotellaG" parent="." instance=ExtResource("15_msgcq")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 2.62189, 0.872336, 3.49797)
+
+[node name="Escenario_Exterior_BotellaG2" parent="." instance=ExtResource("15_msgcq")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -7.59572, 0.813091, 15.254)
+
+[node name="Escenario_Exterior_BotellaS" parent="." instance=ExtResource("16_astl6")]
+transform = Transform3D(53.8067, 55.0051, -2.40435e-06, 6.29345e-16, -3.36343e-06, -76.9462, -55.0051, 53.8067, -2.35196e-06, 2.38567, 0.874211, 11.6906)
+
+[node name="Escenario_Exterior_BotellaS2" parent="." instance=ExtResource("16_astl6")]
+transform = Transform3D(56.589, 52.1384, 2.26554e-06, 3.35063e-06, -2.93142e-07, -76.9462, -52.1384, 56.589, -2.48596e-06, 13.0125, 0.938739, 3.4341)
+
+[node name="Escenario_Exterior_CajaHamburguesa" parent="." instance=ExtResource("17_kh6k5")]
+transform = Transform3D(110.431, -0.9077, -143.672, 0.553161, 181.209, -0.719674, 143.674, -7.19297e-07, 110.432, 2.39934, 0.867811, 12.1514)
+
+[node name="Escenario_Exterior_CajaHamburguesa2" parent="." instance=ExtResource("17_kh6k5")]
+transform = Transform3D(-111.846, -141.871, -14.1674, -134.56, 110.988, -49.1213, 47.1343, -19.7982, -173.85, 13.2791, 1.01096, 3.31063)
+
+[node name="Escenario_Exterior_CajaPizza" parent="." instance=ExtResource("18_7o2d7")]
+transform = Transform3D(-38.7159, 0, -66.4966, 0, 76.9462, 0, 66.4966, 0, -38.7159, 2.65751, 0.903996, 3.92637)
+
+[node name="Escenario_Exterior_CajaPizza2" parent="." instance=ExtResource("18_7o2d7")]
+transform = Transform3D(4.63177, 0, -76.8067, 0, 76.9462, 0, 76.8067, 0, 4.63177, 2.60095, 0.925574, 14.4)
+
+[node name="Escenario_Exterior_Edificio1" parent="." instance=ExtResource("19_05uvn")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -11.1196, 0.776035, 12.8499)
+
+[node name="Escenario_Exterior_Edificio2" parent="." instance=ExtResource("20_d8uy0")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -11.1605, 0.809294, 6.12333)
+
+[node name="Escenario_Exterior_Fuente" parent="." instance=ExtResource("21_5p1bt")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 8.18532, 0.74424, 10.4547)
+
+[node name="Escenario_Exterior_Manzana" parent="." instance=ExtResource("22_wd2ru")]
+transform = Transform3D(33.522, 69.2603, -3.02747e-06, 0, -3.36343e-06, -76.9462, -69.2603, 33.522, -1.46529e-06, 2.61805, 0.911474, 5.63973)
+
+[node name="Escenario_Exterior_Manzana2" parent="." instance=ExtResource("22_wd2ru")]
+transform = Transform3D(63.7718, 43.0567, -1.88207e-06, 1.23031e-13, -3.36343e-06, -76.9462, -43.0567, 63.7718, -2.78755e-06, 2.36664, 0.933635, 14.5848)
+
+[node name="Escenario_Exterior_Manzana3" parent="." instance=ExtResource("22_wd2ru")]
+transform = Transform3D(63.7718, 43.0567, -1.88207e-06, 1.23031e-13, -3.36343e-06, -76.9462, -43.0567, 63.7718, -2.78755e-06, 12.5786, 0.933635, 3.42062)
+
+[node name="Escenario_Exterior_Sillas" parent="." instance=ExtResource("23_lqxqa")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.4232, 0.794021, 7.39055)
+
+[node name="Escenario_Exterior_Sillas2" parent="." instance=ExtResource("23_lqxqa")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 5.59654, 0.794021, 7.39055)
+
+[node name="Escenario_Exterior_Sillas3" parent="." instance=ExtResource("23_lqxqa")]
+transform = Transform3D(-76.9462, 0, -6.72685e-06, 0, 76.9462, 0, 6.72685e-06, 0, -76.9462, 11.4232, 0.794021, 13.6536)
+
+[node name="Escenario_Exterior_Sillas4" parent="." instance=ExtResource("23_lqxqa")]
+transform = Transform3D(-76.9462, 0, -6.72685e-06, 0, 76.9462, 0, 6.72685e-06, 0, -76.9462, 5.59654, 0.794021, 13.6536)
+
+[node name="Escenario_Exterior_Suelo" parent="." instance=ExtResource("24_kwgja")]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -0.310369, 0.481573, 1.00331)
+
+[node name="Escenario_Exterior_Vaso" parent="." instance=ExtResource("25_8k05k")]
+transform = Transform3D(-76.8762, 3.28255, 0, -3.28255, -76.8762, 0, 0, 0, 76.9462, 12.7946, 1.07334, 3.1503)
+
+[node name="Escenario_Exterior_Vaso4" parent="." instance=ExtResource("25_8k05k")]
+transform = Transform3D(-1.23992, 53.4862, 55.3029, -76.9256, -1.7833, 0, 1.28169, -55.288, 53.5006, 12.4245, 0.963852, 3.28783)
+
+[node name="Escenario_Exterior_Vaso3" parent="." instance=ExtResource("25_8k05k")]
+transform = Transform3D(-61.4501, -29.0565, 36.0601, -45.834, 46.7274, -40.4538, -6.62213, -53.7865, -54.6249, 2.57362, 0.859413, 12.4054)
+
+[node name="Escenario_Exterior_Vaso2" parent="." instance=ExtResource("25_8k05k")]
+transform = Transform3D(48.9645, 59.3565, -2.59455e-06, 0, -3.36343e-06, -76.9462, -59.3565, 48.9645, -2.14031e-06, 2.44779, 0.901399, 3.28221)
+
+[node name="Escenario_Exterior_EdificioLegislatura" parent="." instance=ExtResource("27_bh2u6")]
+transform = Transform3D(82, 0, 0, 0, 82, 0, 0, 0, 82, -0.149036, 0.729107, -10.2639)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

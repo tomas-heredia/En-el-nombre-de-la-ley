@@ -157,7 +157,7 @@ transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.
 environment = SubResource("Environment_f5ryl")
 
 [node name="Player" parent="." instance=ExtResource("2_lvkoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 1.44599, -0.861486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64313, 1.44599, -0.861486)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
@@ -166,7 +166,8 @@ tween_resource = SubResource("Resource_25s27")
 camera_3d_resource = SubResource("Resource_7n8oq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041256, 0.00311756, 0.00764656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041256, 0.279811, 0.00764656)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_c5jnx")
 
 [node name="NaturePack001" type="MeshInstance3D" parent="NavigationRegion3D"]
@@ -180,7 +181,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_uk5b4")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 2.95923, 2.42929)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -4.35624, 2.95923, 2.42929)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("7_kwfmu")
@@ -203,7 +204,8 @@ transform = Transform3D(3.59067, 0, 0, 0, 3.59067, 0, 0, 0, 3.59067, 0, 1.39395,
 text = "A Exterior"
 
 [node name="PuertaAOficina" parent="." instance=ExtResource("10_88r6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05898, 1.55175, -10.9198)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29593, 1.55175, -11.6233)
+visible = false
 script = ExtResource("12_6kkdw")
 
 [node name="Label3D" type="Label3D" parent="PuertaAOficina"]
@@ -214,7 +216,7 @@ text = "A Oficina"
 transform = Transform3D(3000, 0, 0, 0, 1550, 0, 0, 0, 3000, 0.285562, 7.26079, 1.04702)
 
 [node name="Escenario_Entrada_Suelo" parent="." instance=ExtResource("13_5en06")]
-transform = Transform3D(3000, 0, 0, 0, 1550, 0, 0, 0, 3000, 0.285562, 0.105621, 1.04702)
+transform = Transform3D(3000, 0, 0, 0, 1550, 0, 0, 0, 3000, 0.285562, -0.0410262, 1.04702)
 
 [node name="Escenario_Entrada_Pared" parent="." instance=ExtResource("14_rfupu")]
 transform = Transform3D(-8.74228e-06, 0, 2800, 0, 700, 0, -200, 0, -0.000122392, 0.373797, 0.585, 15.7619)

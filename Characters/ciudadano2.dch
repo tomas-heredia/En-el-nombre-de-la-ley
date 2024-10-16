@@ -17,12 +17,12 @@
 "portraits": {
 "New portrait": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/PersonajeB.png\""
+"image": "\"res://Assets/Textures/PersonajeB/PersonajeB_Normal.png\""
 },
 "ignore_char_scale": true,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.17,
+"scale": 0.2,
 "scene": ""
 }
 },

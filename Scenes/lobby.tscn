@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://d4mlqgcuvt25g"]
+[gd_scene load_steps=35 format=3 uid="uid://d4mlqgcuvt25g"]
 
 [ext_resource type="PackedScene" uid="uid://ceydwgo2i6jn5" path="res://Scenes/npc_2.tscn" id="1_jkrlk"]
-[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="1_ndo7o"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_lvkoe"]
+[ext_resource type="Shader" path="res://Assets/UI/transicion.gdshader" id="2_tiswf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_6gqth"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_gfo1t"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_00hev"]
@@ -62,6 +62,12 @@ func AOficina():
 	$AnimationPlayer.play(\"fadeOut\")
 "
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mggvq"]
+shader = ExtResource("2_tiswf")
+shader_parameter/circle_size = 0.0
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1980.0
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h4xh8"]
 sky_top_color = Color(0.117647, 0.462745, 0.74902, 1)
 
@@ -103,14 +109,14 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [0.0, 1.05]
 }
 
 [sub_resource type="Animation" id="Animation_mhxe7"]
@@ -119,18 +125,34 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [1.05, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1or4v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpwg0"]
 _data = {
+"RESET": SubResource("Animation_1or4v"),
 "fadeIn": SubResource("Animation_h8qku"),
 "fadeOut": SubResource("Animation_mhxe7")
 }
@@ -141,14 +163,22 @@ script = SubResource("GDScript_av6tx")
 [node name="NPC2" parent="." instance=ExtResource("1_jkrlk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95305, 1.20314, -2.60123)
 
+[node name="Transicion" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_mggvq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0, 0, 0)
 offset_left = -100.0
 offset_top = -74.0
 offset_right = 28.0
 offset_bottom = 54.0
 scale = Vector2(11.9658, 6.83689)
-texture = ExtResource("1_ndo7o")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.984278, -0.000557113, -0.99965, -0.0264666, -0.942749, 9.17101, 4.40892)

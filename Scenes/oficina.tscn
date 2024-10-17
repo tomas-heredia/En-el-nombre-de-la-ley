@@ -1,8 +1,9 @@
-[gd_scene load_steps=69 format=3 uid="uid://c6syw644kql1k"]
+[gd_scene load_steps=71 format=3 uid="uid://c6syw644kql1k"]
 
 [ext_resource type="Script" path="res://Scenes/oficina.gd" id="1_b3pie"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="1_smdut"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_0i4kw"]
+[ext_resource type="Shader" path="res://Assets/UI/transicion.gdshader" id="2_x28xe"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_tkcb8"]
 [ext_resource type="PackedScene" uid="uid://c84wklcvydoow" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Impresora.glb" id="4_5ywds"]
 [ext_resource type="PackedScene" uid="uid://cjlsxk422fdf4" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared4.glb" id="4_aw2eq"]
@@ -11,7 +12,6 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_hkdgx"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_3hnwq"]
 [ext_resource type="AudioStream" uid="uid://x7by45sd04cb" path="res://Assets/sounds/music/lost.wav" id="7_ac3xo"]
-[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="9_g526s"]
 [ext_resource type="PackedScene" uid="uid://wmmdo8i8v8oo" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_SueloTecho1.glb" id="10_7kvr5"]
 [ext_resource type="PackedScene" uid="uid://ct15dwgmayedv" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Books1.glb" id="10_q6qhl"]
 [ext_resource type="PackedScene" uid="uid://dk4i6btiolcy7" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared1.glb" id="11_hgk22"]
@@ -60,6 +60,12 @@
 [ext_resource type="PackedScene" uid="uid://dn5fgmlu2kkxn" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla10.glb" id="59_84g3d"]
 [ext_resource type="PackedScene" uid="uid://d20s8axgeutca" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_SueloTecho2.glb" id="60_0rpe2"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4qtn6"]
+shader = ExtResource("2_x28xe")
+shader_parameter/circle_size = 0.0
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1980.0
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_86hwj"]
 data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3)
 
@@ -97,14 +103,14 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [0.0, 1.05]
 }
 
 [sub_resource type="Animation" id="Animation_mhxe7"]
@@ -113,18 +119,34 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [1.05, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ioilm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpwg0"]
 _data = {
+"RESET": SubResource("Animation_ioilm"),
 "fadeIn": SubResource("Animation_h8qku"),
 "fadeOut": SubResource("Animation_mhxe7")
 }
@@ -132,14 +154,22 @@ _data = {
 [node name="oficina" type="Node3D"]
 script = ExtResource("1_b3pie")
 
+[node name="Transicion" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4qtn6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0, 0, 0)
 offset_left = -100.0
 offset_top = -74.0
 offset_right = 28.0
 offset_bottom = 54.0
 scale = Vector2(11.9658, 6.83689)
-texture = ExtResource("9_g526s")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732987, 0)

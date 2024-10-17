@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dmf8c24mgc1ur"]
+[gd_scene load_steps=41 format=3 uid="uid://dmf8c24mgc1ur"]
 
 [ext_resource type="Script" path="res://Scripts/mundo.gd" id="1_mit0t"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_vrp4t"]
@@ -27,6 +27,13 @@
 [ext_resource type="PackedScene" uid="uid://8phleivu1uf0" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Suelo.glb" id="24_kwgja"]
 [ext_resource type="PackedScene" uid="uid://42pg6b8cisuu" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Vaso.glb" id="25_8k05k"]
 [ext_resource type="PackedScene" uid="uid://dhd5honi3baix" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_EdificioLegislatura.glb" id="27_bh2u6"]
+[ext_resource type="Shader" path="res://Assets/UI/transicion.gdshader" id="28_cedqy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ya1g"]
+shader = ExtResource("28_cedqy")
+shader_parameter/circle_size = 0.0
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1980.0
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w5xyq"]
 panorama = ExtResource("3_ifk7s")
@@ -69,14 +76,14 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 1.4667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [0.0, 1.05]
 }
 
 [sub_resource type="Animation" id="Animation_mhxe7"]
@@ -85,18 +92,34 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 1.46667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [1.05, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tjn4m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpwg0"]
 _data = {
+"RESET": SubResource("Animation_tjn4m"),
 "fadeIn": SubResource("Animation_h8qku"),
 "fadeOut": SubResource("Animation_mhxe7")
 }
@@ -105,8 +128,17 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230814, -0.183464, 0.240302)
 script = ExtResource("1_mit0t")
 
+[node name="Transicion" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6ya1g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0, 0, 0)
 offset_left = -100.0
 offset_top = -74.0
 offset_right = 28.0
@@ -153,7 +185,7 @@ script = ExtResource("8_nucu7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15005, 1.00508, 0)
 
 [node name="Puerta" parent="." instance=ExtResource("10_j3fso")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30812, 1.62768, -9.97625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30812, 1.62768, -5.37406)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_u8jy0")

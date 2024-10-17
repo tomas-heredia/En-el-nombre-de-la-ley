@@ -8,20 +8,29 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "New portrait",
+"default_portrait": "default",
 "description": "",
 "display_name": "Legisladora",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"New portrait": {
+"default": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/PersonajeD/PersonajeD_Normal.png\""
+"image": "\"res://Assets/Textures/legisladora.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.2,
+"scale": 0.3,
+"scene": ""
+},
+"riendo": {
+"export_overrides": {
+"image": "\"res://Assets/Textures/legisladora_variante1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.3,
 "scene": ""
 }
 },

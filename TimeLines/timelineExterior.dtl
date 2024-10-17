@@ -21,14 +21,13 @@ ciudadano2: …pero entiendo que los ciudadanos pueden muchas veces proponerlas 
 leave ciudadano2
 - Podría probar…
 - ¡Yo quiero hacer unas leyes!
-join ciudadano1 left
+join ciudadano1 (incredulo) left
 ciudadano1: ¿Crees que eso funciona?
 ciudadano1: Yo no entiendo nada de esas cosas, para mi es como otro mundo.
 leave ciudadano1
 - No se pierde nada con intentar, ¿no?
 - ¡Yo quiero hacer unas leyeees!
-join ciudadano2 left
-update ciudadano2
+join ciudadano2 (riendo) left
 ciudadano2: ¡Jajaja! ¡Me gusta tu iniciativa!
 [wait time="0.5"]
 do Global.interaccion()

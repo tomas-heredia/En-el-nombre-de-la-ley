@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8648m7kobw2q"
-path="res://.godot/imported/PersonajeB.png-0f8673e4aa8408f9ae8c99922c701412.ctex"
+uid="uid://sxixmx5vhjgh"
+path="res://.godot/imported/legisladora_variante1.png-7e64cc4d2089a0d958bf3fb3c3799101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/PersonajeB.png"
-dest_files=["res://.godot/imported/PersonajeB.png-0f8673e4aa8408f9ae8c99922c701412.ctex"]
+source_file="res://Assets/Textures/legisladora_variante1.png"
+dest_files=["res://.godot/imported/legisladora_variante1.png-7e64cc4d2089a0d958bf3fb3c3799101.ctex"]
 
 [params]
 

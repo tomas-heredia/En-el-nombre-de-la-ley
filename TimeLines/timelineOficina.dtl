@@ -1,8 +1,8 @@
 protagonista: Este lugar es gigante, ¿no?
 protagonista: Deben haber pasado muchos eventos importantes acá…
 join legisladora left
-legisladora: No tantos en realidad.
-legisladora: Éste edificio tiene solo 6 años. La Legislatura se encontraba en otro lugar antes.
+legisladora (riendo): No tantos en realidad.
+legisladora (default): Éste edificio tiene solo 6 años. La Legislatura se encontraba en otro lugar antes.
 legisladora: Si hubo historia en ese tiempo igual.
 legisladora: La Ley 9.578 de Promoción Audiovisual se sancionó aquí por ejemplo.
 - ¿Podes contarme más sobre este lugar?

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buoudlx6eys5g"
-path="res://.godot/imported/PersonajeC.png-00b46a098751fda8439455412c885046.ctex"
+uid="uid://culgrihnng7na"
+path="res://.godot/imported/ciudadano_variante1.png-3ea58d7e2d6aa9b9d4cb58be996877c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/PersonajeC.png"
-dest_files=["res://.godot/imported/PersonajeC.png-00b46a098751fda8439455412c885046.ctex"]
+source_file="res://Assets/Textures/ciudadano_variante1.png"
+dest_files=["res://.godot/imported/ciudadano_variante1.png-3ea58d7e2d6aa9b9d4cb58be996877c6.ctex"]
 
 [params]
 

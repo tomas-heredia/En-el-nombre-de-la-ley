@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://c6syw644kql1k"]
+[gd_scene load_steps=69 format=3 uid="uid://c6syw644kql1k"]
 
 [ext_resource type="Script" path="res://Scenes/oficina.gd" id="1_b3pie"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="1_smdut"]
@@ -47,7 +47,6 @@
 [ext_resource type="PackedScene" uid="uid://dqrg78t57juby" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla11.glb" id="45_rk1yd"]
 [ext_resource type="PackedScene" uid="uid://hnn3wbmdkta0" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Laptop2.glb" id="46_gjwtr"]
 [ext_resource type="PackedScene" uid="uid://7gsrcbtpnox" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Papeles3.glb" id="47_pxdvo"]
-[ext_resource type="PackedScene" uid="uid://pv67m4w0c0vr" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Portalapices2.glb" id="48_uvts5"]
 [ext_resource type="PackedScene" uid="uid://c1rcbsqxg41dc" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Estante1.glb" id="49_1dnm3"]
 [ext_resource type="PackedScene" uid="uid://daj74lk7sfeoh" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Books2.glb" id="50_iroha"]
 [ext_resource type="PackedScene" uid="uid://k6hip1ctksel" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Books3.glb" id="51_0wdts"]
@@ -172,7 +171,7 @@ environment = SubResource("Environment_qaj4q")
 transform = Transform3D(1, 0, 0, 0, 0.140366, 0.9901, 0, -0.9901, 0.140366, 0, 4.42966, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 6.72158, 2.85132, 10.2953)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 6.72157, 2.85132, 10.2953)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("6_3hnwq")
@@ -301,9 +300,6 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.26037, 1.00546, -3.3
 
 [node name="Escenario_Oficina_Papeles3" parent="Node3D" instance=ExtResource("47_pxdvo")]
 transform = Transform3D(0.239907, 0, -0.970798, 0, 1, 0, 0.970798, 0, 0.239907, -4.34559, 0.863458, -3.30252)
-
-[node name="Escenario_Oficina_Portalapices2" parent="Node3D" instance=ExtResource("48_uvts5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65311, 0.954901, -3.19681)
 
 [node name="Escenario_Oficina_Estante1" parent="Node3D" instance=ExtResource("49_1dnm3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514001, 0.725026, -2.46421)

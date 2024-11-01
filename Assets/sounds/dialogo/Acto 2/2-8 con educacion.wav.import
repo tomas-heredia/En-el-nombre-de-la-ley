@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpujj08u7aq5s"
+path="res://.godot/imported/2-8 con educacion.wav-990fce7e5be933ef2b32e88401fb9010.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dialogo/Acto 2/2-8 con educacion.wav"
+dest_files=["res://.godot/imported/2-8 con educacion.wav-990fce7e5be933ef2b32e88401fb9010.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cje5vxdsf8vo1"
+path="res://.godot/imported/2-12 como te gustaria.wav-d203010a843d08993883482441c4bfc1.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dialogo/Acto 2/2-12 como te gustaria.wav"
+dest_files=["res://.godot/imported/2-12 como te gustaria.wav-d203010a843d08993883482441c4bfc1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

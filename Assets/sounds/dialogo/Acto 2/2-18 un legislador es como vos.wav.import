@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ui8uw7bu7fv7"
+path="res://.godot/imported/2-18 un legislador es como vos.wav-6496141b8974c1ccb090d4609a674e69.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dialogo/Acto 2/2-18 un legislador es como vos.wav"
+dest_files=["res://.godot/imported/2-18 un legislador es como vos.wav-6496141b8974c1ccb090d4609a674e69.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

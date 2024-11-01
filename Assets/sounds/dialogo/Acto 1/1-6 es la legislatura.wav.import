@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pe4eot1ripty"
+path="res://.godot/imported/1-6 es la legislatura.wav-e0775d803dd742050d3bc0074ff8ae7b.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dialogo/Acto 1/1-6 es la legislatura.wav"
+dest_files=["res://.godot/imported/1-6 es la legislatura.wav-e0775d803dd742050d3bc0074ff8ae7b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

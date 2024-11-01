@@ -163,6 +163,8 @@ tween_resource = SubResource("Resource_mev1u")
 camera_3d_resource = SubResource("Resource_6h4hq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32861, 0)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_xs8mw")
 
 [node name="NaturePack001" type="MeshInstance3D" parent="NavigationRegion3D"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjam671le63ey"
+path="res://.godot/imported/2-1 Buen dia joven.wav-8bbaf67ecfcd031442de73ff89a30706.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dialogo/Acto 2/2-1 Buen dia joven.wav"
+dest_files=["res://.godot/imported/2-1 Buen dia joven.wav-8bbaf67ecfcd031442de73ff89a30706.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

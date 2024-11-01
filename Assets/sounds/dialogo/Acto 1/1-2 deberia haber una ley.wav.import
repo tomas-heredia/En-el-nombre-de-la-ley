@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cn7kon0fqnin8"
+path="res://.godot/imported/1-2 deberia haber una ley.wav-75e6abec203f975919f0f5ec8c74fa30.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dialogo/Acto 1/1-2 deberia haber una ley.wav"
+dest_files=["res://.godot/imported/1-2 deberia haber una ley.wav-75e6abec203f975919f0f5ec8c74fa30.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

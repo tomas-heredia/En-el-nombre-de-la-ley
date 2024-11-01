@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chl6j6ot5cm1f"
+path="res://.godot/imported/1-12 yo quiero hacer unas leyes.wav-8f22327a6809b45c43dfb43e1f43f697.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dialogo/Acto 1/1-12 yo quiero hacer unas leyes.wav"
+dest_files=["res://.godot/imported/1-12 yo quiero hacer unas leyes.wav-8f22327a6809b45c43dfb43e1f43f697.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

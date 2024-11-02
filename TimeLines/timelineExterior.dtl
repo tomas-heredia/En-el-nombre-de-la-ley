@@ -24,31 +24,31 @@ leave ciudadano2
 	[voice path="res://Assets/sounds/dialogo/Acto 1/1- 9 puedo ir yo.wav" volume="0.0" bus="Voice"]
 	protagonista: ¿Puedo ir yo a hacer unas leyes ahí dentro?
 join ciudadano2 left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-9 leyes las deciden.wav" volume="0.0"]
+[voice path="res://Assets/sounds/dialogo/Acto 1/1-9 leyes las deciden.wav" volume="0.0" bus="Voice"]
 ciudadano2: Las leyes las deciden los legisladores…
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-10 pero entiendo.wav" volume="0.0"]
+[voice path="res://Assets/sounds/dialogo/Acto 1/1-10 pero entiendo.wav" volume="0.0" bus="Voice"]
 ciudadano2: …pero entiendo que los ciudadanos pueden muchas veces proponerlas y participar en su armado.
 leave ciudadano2
 - Podría probar…
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-11 poria probar.wav" volume="0.0"]
+	[voice path="res://Assets/sounds/dialogo/Acto 1/1-11 poria probar.wav" volume="0.0" bus="Voice"]
 	protagonista: Podría probar…
 - ¡Yo quiero hacer unas leyes!
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-12 yo quiero hacer unas leyes.wav" volume="0.0"]
+	[voice path="res://Assets/sounds/dialogo/Acto 1/1-12 yo quiero hacer unas leyes.wav" volume="0.0" bus="Voice"]
 	protagonista: ¡Yo quiero hacer unas leyes!
 join ciudadano1 (incredulo) left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-13 crees que eso.wav" volume="0.0"]
+[voice path="res://Assets/sounds/dialogo/Acto 1/1-13 crees que eso.wav" volume="0.0" bus="Voice"]
 ciudadano1: ¿Crees que eso funciona?
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-14 yo no entiendo nada.wav" volume="0.0"]
+[voice path="res://Assets/sounds/dialogo/Acto 1/1-14 yo no entiendo nada.wav" volume="0.0" bus="Voice"]
 ciudadano1: Yo no entiendo nada de esas cosas, para mi es como otro mundo.
 leave ciudadano1
 - No se pierde nada con intentar, ¿no?
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-15 no se pierde nada.wav" volume="0.0"]
+	[voice path="res://Assets/sounds/dialogo/Acto 1/1-15 no se pierde nada.wav" volume="0.0" bus="Voice"]
 	protagonista: No se pierde nada con intentar, ¿no?
 - ¡Yo quiero hacer unas leyeees!
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-16 yo quiero hacer unas leyes.wav" volume="0.0"]
+	[voice path="res://Assets/sounds/dialogo/Acto 1/1-16 yo quiero hacer unas leyes.wav" volume="0.0" bus="Voice"]
 	protagonista: ¡Yo quiero hacer unas leyeees!
 join ciudadano2 (riendo) left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-17 Jaja me gusta.wav" volume="0.0"]
+[voice path="res://Assets/sounds/dialogo/Acto 1/1-17 Jaja me gusta.wav" volume="0.0" bus="Voice"]
 ciudadano2: ¡Jajaja! ¡Me gusta tu iniciativa!
 [wait time="0.5"]
 do Global.interaccion()

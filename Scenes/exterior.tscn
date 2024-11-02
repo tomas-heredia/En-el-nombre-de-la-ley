@@ -153,7 +153,7 @@ transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.
 environment = SubResource("Environment_vuoyc")
 
 [node name="Player" parent="." instance=ExtResource("3_6amup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 0.797019, -0.861486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 1.54047, -0.861486)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
@@ -178,13 +178,13 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_hjbk3")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 2.31026, 2.42929)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 3.05371, 2.42929)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("8_nucu7")
 
 [node name="NPC" parent="." instance=ExtResource("9_bat68")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15005, 1.00508, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15005, 1.46115, 0)
 
 [node name="Puerta" parent="." instance=ExtResource("10_j3fso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30812, 1.62768, -5.37406)

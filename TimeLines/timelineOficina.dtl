@@ -1,13 +1,27 @@
+[voice path="res://Assets/sounds/dialogo/Acto 3/3-1 wow es gigante.wav" volume="0.0" bus="Voice"]
 protagonista: Este lugar es gigante, ¿no?
+[voice path="res://Assets/sounds/dialogo/Acto 3/3-2 Deben haber pasado muchos.wav" volume="0.0" bus="Voice"]
 protagonista: Deben haber pasado muchos eventos importantes acá…
 join legisladora left
+[voice path="res://Assets/sounds/dialogo/Acto 3/3-3 no tantos.wav" volume="0.0" bus="Voice"]
 legisladora (riendo): No tantos en realidad.
+[voice path="res://Assets/sounds/dialogo/Acto 3/3-4 este edificio.wav" volume="0.0" bus="Voice"]
 legisladora (default): Éste edificio tiene solo 6 años. La Legislatura se encontraba en otro lugar antes.
+[voice path="res://Assets/sounds/dialogo/Acto 3/3-6 si hubo.wav" volume="0.0" bus="Voice"]
 legisladora: Si hubo historia en ese tiempo igual.
+[voice path="res://Assets/sounds/dialogo/Acto 3/3-7 la ley.wav" volume="0.0" bus="Voice"]
 legisladora: La Ley 9.578 de Promoción Audiovisual se sancionó aquí por ejemplo.
 - ¿Podes contarme más sobre este lugar?
+	[voice path="res://Assets/sounds/dialogo/Acto 3/3-8 podes contarme.wav" volume="0.0" bus="Voice"]
+	protagonista: ¿Podes contarme más sobre este lugar?
+	[voice path="res://Assets/sounds/dialogo/Acto 3/3-10 la legislatura.wav" volume="0.0" bus="Voice"]
 	legisladora: La Legislatura representa un sistema Representativo, Republicano y Federal…
-	“La caja de resonancia de la voz, del pueblo” expresada a traves de sus representantes.
+	[voice path="res://Assets/sounds/dialogo/Acto 3/3-11 La caja de resonancia.wav" volume="0.0" bus="Voice"]
+	legisladora (riendo): “La caja de resonancia de la voz, del pueblo” expresada a traves de sus representantes.
 - ¿Cómo es que las decisiones que se toman aquí impactan a la gente en la calle?
+	[voice path="res://Assets/sounds/dialogo/Acto 3/3-9 como es que.wav" volume="0.0" bus="Voice"]
+	protagonista: ¿Cómo es que las decisiones que se toman aquí impactan a la gente en la calle?
+	[voice path="res://Assets/sounds/dialogo/Acto 3/3-12 las desiciones.wav" volume="0.0" bus="Voice"]
 	legisladora: Las decisiones que tomamos aquí están diseñadas para mejorar la vida de las personas.
+	[voice path="res://Assets/sounds/dialogo/Acto 3/3-13 cada ley.wav" volume="0.0" bus="Voice"]
 	legisladora: Cada ley que aprobamos debe traducirse en acciones concretas, desde la protección del medio ambiente hasta la educación y la seguridad.

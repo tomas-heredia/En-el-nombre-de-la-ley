@@ -197,6 +197,7 @@ camera_3d_resource = SubResource("Resource_pnhfv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qaj4q")
+camera_attributes = ExtResource("8_tvxti")
 
 [node name="DirectionalLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, 8.4275, 6.55626, 4.32476)
@@ -248,7 +249,6 @@ spot_angle = 80.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 6.72157, 2.85132, 10.2953)
-attributes = ExtResource("8_tvxti")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("6_3hnwq")

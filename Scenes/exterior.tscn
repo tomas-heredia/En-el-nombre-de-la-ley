@@ -143,6 +143,7 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_bnewo")
+camera_attributes = ExtResource("10_gasop")
 
 [node name="Player" parent="." instance=ExtResource("3_6amup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 1.54047, -0.861486)
@@ -171,7 +172,6 @@ shape = SubResource("ConcavePolygonShape3D_hjbk3")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 3.05371, 2.42929)
-attributes = ExtResource("10_gasop")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("8_nucu7")

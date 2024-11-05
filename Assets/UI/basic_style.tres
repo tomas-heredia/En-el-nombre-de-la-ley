@@ -34,13 +34,13 @@ overrides = {
 "box_color_custom": "Color(1, 1, 1, 1)",
 "box_color_use_global": "false",
 "box_panel": "\"res://Assets/UI/text_stylebox.tres\"",
-"box_size": "Vector2(1250, 300)",
+"box_size": "Vector2(1100, 300)",
 "name_label_custom_font_size": "30.0",
 "name_label_font": "\"res://Assets/Fonts/BarlowCondensed-SemiBoldItalic.ttf\"",
 "name_label_use_global_font": "false",
 "name_label_use_global_font_size": "false",
 "normal_font": "\"res://Assets/Fonts/BarlowCondensed-SemiBoldItalic.ttf\"",
-"text_size": "35.0",
+"text_size": "50.0",
 "text_use_global_size": "false"
 }
 
@@ -56,7 +56,8 @@ overrides = {
 "boxes_min_size": "Vector2(50, 50)",
 "boxes_offset": "Vector2(-200, -300)",
 "boxes_v_separation": "20.0",
-"font_custom": "\"res://Assets/Fonts/BarlowCondensed-SemiBoldItalic.ttf\"",
+"font_custom": "\"BarlowCondensed-SemiBoldItalic.ttf\"",
+"font_size_use_global": "false",
 "font_use_global": "false"
 }
 
@@ -75,4 +76,4 @@ script = ExtResource("9_gmvur")
 name = "basic_style"
 base_overrides = {}
 layers = Array[ExtResource("2_d60wr")]([SubResource("Resource_fihk6"), SubResource("Resource_empii"), SubResource("Resource_an66g"), SubResource("Resource_nnj3c"), SubResource("Resource_p80si"), SubResource("Resource_486nh"), SubResource("Resource_mnnw5"), SubResource("Resource_ysiyn")])
-metadata/_latest_layer = 5
+metadata/_latest_layer = 1

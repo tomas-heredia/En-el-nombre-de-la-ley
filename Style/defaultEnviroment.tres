@@ -13,3 +13,6 @@ background_mode = 2
 sky = SubResource("Sky_yn0cb")
 ambient_light_source = 3
 ssao_enabled = true
+ssil_enabled = true
+adjustment_enabled = true
+adjustment_contrast = 1.1

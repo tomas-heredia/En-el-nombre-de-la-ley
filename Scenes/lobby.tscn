@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d4mlqgcuvt25g"]
+[gd_scene load_steps=36 format=3 uid="uid://d4mlqgcuvt25g"]
 
 [ext_resource type="PackedScene" uid="uid://ceydwgo2i6jn5" path="res://Scenes/npc_2.tscn" id="1_jkrlk"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_lvkoe"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_gfo1t"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_00hev"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="6_m5aj5"]
+[ext_resource type="CameraAttributesPractical" uid="uid://bn600wucp2y1p" path="res://Style/defaultCameraAttributes.tres" id="8_dlj2s"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_sdnfj"]
 [ext_resource type="AudioStream" uid="uid://d16fxq21mcsia" path="res://Assets/sounds/music/tension.wav" id="9_x67pq"]
 [ext_resource type="PackedScene" uid="uid://bqk73ddy5gpmx" path="res://Scenes/puerta.tscn" id="10_88r6j"]
@@ -189,6 +190,7 @@ spot_angle = 79.8
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f5ryl")
+camera_attributes = ExtResource("8_dlj2s")
 
 [node name="Player" parent="." instance=ExtResource("2_lvkoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93903, 1.44599, -0.861486)

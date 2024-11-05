@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://wjr52uidjat4"]
+
+[ext_resource type="Texture2D" uid="uid://byjk8oefcdw47" path="res://Assets/Textures/SkyBox.png" id="1_05kwx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w5xyq"]
+panorama = ExtResource("1_05kwx")
+
+[sub_resource type="Sky" id="Sky_yn0cb"]
+sky_material = SubResource("PanoramaSkyMaterial_w5xyq")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_yn0cb")
+ambient_light_source = 3
+ssao_enabled = true

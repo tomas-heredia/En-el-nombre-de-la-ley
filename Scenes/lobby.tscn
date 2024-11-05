@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d4mlqgcuvt25g"]
+[gd_scene load_steps=36 format=3 uid="uid://d4mlqgcuvt25g"]
 
 [ext_resource type="PackedScene" uid="uid://ceydwgo2i6jn5" path="res://Scenes/npc_2.tscn" id="1_jkrlk"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_lvkoe"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_gfo1t"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_00hev"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="6_m5aj5"]
+[ext_resource type="CameraAttributesPractical" uid="uid://bn600wucp2y1p" path="res://Style/defaultCameraAttributes.tres" id="8_dlj2s"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_sdnfj"]
 [ext_resource type="AudioStream" uid="uid://d16fxq21mcsia" path="res://Assets/sounds/music/tension.wav" id="9_x67pq"]
 [ext_resource type="PackedScene" uid="uid://bqk73ddy5gpmx" path="res://Scenes/puerta.tscn" id="10_88r6j"]
 [ext_resource type="Script" path="res://Scripts/puertaAExterior.gd" id="11_l2rbk"]
@@ -76,6 +78,7 @@ sky_material = SubResource("ProceduralSkyMaterial_h4xh8")
 [sub_resource type="Environment" id="Environment_f5ryl"]
 background_mode = 2
 sky = SubResource("Sky_jbi02")
+ssao_enabled = true
 
 [sub_resource type="Resource" id="Resource_25s27"]
 script = ExtResource("4_gfo1t")
@@ -179,8 +182,11 @@ offset_right = 28.0
 offset_bottom = 54.0
 scale = Vector2(11.9658, 6.83689)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.984625, 0.00407482, -0.174633, 0.174679, -0.026157, 0.984278, -0.000557113, -0.99965, -0.0264666, -0.942749, 9.17101, 4.40892)
+[node name="DirectionalLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.385503, 3.5794, -7.59692)
+light_energy = 3.909
+shadow_enabled = true
+spot_angle = 79.8
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f5ryl")
@@ -188,7 +194,7 @@ environment = SubResource("Environment_f5ryl")
 [node name="Player" parent="." instance=ExtResource("2_lvkoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93903, 1.44599, -0.861486)
 
-[node name="PhantomCamera3D" type="Node3D" parent="Player"]
+[node name="PhantomCamera3D" type="Node3D" parent="Player" groups=["camara"]]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
 script = ExtResource("3_6gqth")
 tween_resource = SubResource("Resource_25s27")
@@ -210,7 +216,11 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_uk5b4")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -7.6481, 2.95923, 2.42929)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -7.65214, 2.95923, 2.42929)
+attributes = ExtResource("8_dlj2s")
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+script = ExtResource("8_sdnfj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

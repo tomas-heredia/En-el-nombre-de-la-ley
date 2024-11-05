@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c6syw644kql1k"]
+[gd_scene load_steps=72 format=3 uid="uid://c6syw644kql1k"]
 
 [ext_resource type="Script" path="res://Scenes/oficina.gd" id="1_b3pie"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="1_smdut"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_hkdgx"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_3hnwq"]
 [ext_resource type="AudioStream" uid="uid://x7by45sd04cb" path="res://Assets/sounds/music/lost.wav" id="7_ac3xo"]
+[ext_resource type="CameraAttributesPractical" uid="uid://bn600wucp2y1p" path="res://Style/defaultCameraAttributes.tres" id="8_tvxti"]
 [ext_resource type="PackedScene" uid="uid://wmmdo8i8v8oo" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_SueloTecho1.glb" id="10_7kvr5"]
 [ext_resource type="PackedScene" uid="uid://ct15dwgmayedv" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Books1.glb" id="10_q6qhl"]
 [ext_resource type="PackedScene" uid="uid://dk4i6btiolcy7" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Pared1.glb" id="11_hgk22"]
@@ -197,11 +198,57 @@ camera_3d_resource = SubResource("Resource_pnhfv")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qaj4q")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.140366, 0.9901, 0, -0.9901, 0.140366, 0, 4.42966, 0)
+[node name="DirectionalLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, 8.4275, 6.55626, 4.32476)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, 2.55878, 6.55626, 4.32476)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -1.7461, 6.55626, 4.32476)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -7.61481, 6.55626, 4.32476)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -1.7461, 6.55626, -4.61306)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D6" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -7.61481, 6.55626, -4.61306)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 6.72157, 2.85132, 10.2953)
+attributes = ExtResource("8_tvxti")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("6_3hnwq")

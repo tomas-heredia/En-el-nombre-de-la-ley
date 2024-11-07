@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://c6syw644kql1k"]
+[gd_scene load_steps=73 format=3 uid="uid://c6syw644kql1k"]
 
 [ext_resource type="Script" path="res://Scenes/oficina.gd" id="1_b3pie"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="1_smdut"]
@@ -60,6 +60,7 @@
 [ext_resource type="PackedScene" uid="uid://c15vygp7cr5vg" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla9.glb" id="58_tw23s"]
 [ext_resource type="PackedScene" uid="uid://dn5fgmlu2kkxn" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Silla10.glb" id="59_84g3d"]
 [ext_resource type="PackedScene" uid="uid://d20s8axgeutca" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_SueloTecho2.glb" id="60_0rpe2"]
+[ext_resource type="PackedScene" uid="uid://cc6xedd1smocg" path="res://Scenes/npc_3.tscn" id="61_yxx6f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4qtn6"]
 shader = ExtResource("2_x28xe")
@@ -173,8 +174,7 @@ offset_bottom = 54.0
 scale = Vector2(11.9658, 6.83689)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732987, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.547604, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(9.96295, 0, 0, 0, 1.60523, 0, 0, 0, 7.42786, -15.0129, -0.163325, 11.1101)
@@ -186,7 +186,7 @@ mesh = ExtResource("1_smdut")
 shape = SubResource("ConcavePolygonShape3D_86hwj")
 
 [node name="Player" parent="." instance=ExtResource("2_0i4kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76578, 1.17565, 4.2642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72015, 1.15579, 3.58043)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
@@ -200,7 +200,7 @@ environment = SubResource("Environment_qaj4q")
 camera_attributes = ExtResource("8_tvxti")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 5.05267, 2.68889, 7.55498)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 5.00704, 2.66903, 6.87121)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("6_3hnwq")
@@ -417,5 +417,8 @@ light_bake_mode = 1
 shadow_enabled = true
 spot_range = 10.905
 spot_angle = 80.0
+
+[node name="NPC3" parent="." instance=ExtResource("61_yxx6f")]
+transform = Transform3D(-0.118959, 0, 0.992899, 0, 1, 0, -0.992899, 0, -0.118959, 2.20938, 1.16718, 3.64424)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

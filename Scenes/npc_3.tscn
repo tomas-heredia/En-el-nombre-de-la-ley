@@ -1,40 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://p6v28xrqgp56"]
+[gd_scene load_steps=4 format=3 uid="uid://cc6xedd1smocg"]
 
-[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_ikdvd"]
-[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_6oan0"]
-[ext_resource type="PackedScene" uid="uid://d2pevnx27iau8" path="res://Assets/Models/Characters/man.tscn" id="3_jif2n"]
+[ext_resource type="PackedScene" uid="uid://buwfti4ucgnvv" path="res://Assets/Models/Characters/woman.tscn" id="2_cfnfs"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fcfxk"]
 radius = 1.87379
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pjcba"]
 
-[node name="NPC" type="RigidBody3D"]
+[node name="NPC3" type="RigidBody3D"]
 collision_mask = 3
-script = ExtResource("1_ikdvd")
 
 [node name="Interaccion" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interaccion"]
 shape = SubResource("SphereShape3D_fcfxk")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.7, 0, 0, 0, 0.494975, 0.494975, 0, -0.494975, 0.494975, 0, 0, 0)
-visible = false
-texture = ExtResource("2_6oan0")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("BoxShape3D_pjcba")
 
-[node name="male" parent="." instance=ExtResource("3_jif2n")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.4, 0)
+[node name="Woman" parent="." instance=ExtResource("2_cfnfs")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.3, 0)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(7.53025, 6.58387)
 text = "\"E\""
+metadata/_edit_use_anchors_ = true
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(0.986881, 0.0735723, 0.143711, 0.131797, -0.881243, -0.453918, 0.0932485, 0.466904, -0.879378, 0, 0.571135, 0)

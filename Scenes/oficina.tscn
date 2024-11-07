@@ -186,7 +186,7 @@ mesh = ExtResource("1_smdut")
 shape = SubResource("ConcavePolygonShape3D_86hwj")
 
 [node name="Player" parent="." instance=ExtResource("2_0i4kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.43468, 1.33808, 7.00455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76578, 1.17565, 4.2642)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
@@ -199,56 +199,8 @@ camera_3d_resource = SubResource("Resource_pnhfv")
 environment = SubResource("Environment_qaj4q")
 camera_attributes = ExtResource("8_tvxti")
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, 8.4275, 6.55626, 4.32476)
-light_energy = 4.0
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.905
-spot_angle = 80.0
-
-[node name="DirectionalLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, 2.55878, 6.55626, 4.32476)
-light_energy = 4.0
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.905
-spot_angle = 80.0
-
-[node name="DirectionalLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -1.7461, 6.55626, 4.32476)
-light_energy = 4.0
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.905
-spot_angle = 80.0
-
-[node name="DirectionalLight3D4" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -7.61481, 6.55626, 4.32476)
-light_energy = 4.0
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.905
-spot_angle = 80.0
-
-[node name="DirectionalLight3D5" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -1.7461, 6.55626, -4.61306)
-light_energy = 4.0
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.905
-spot_angle = 80.0
-
-[node name="DirectionalLight3D6" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.169522, 0.985526, 0, -0.985526, 0.169522, -7.61481, 6.55626, -4.61306)
-light_energy = 4.0
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.905
-spot_angle = 80.0
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 6.72157, 2.85132, 10.2953)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 5.05267, 2.68889, 7.55498)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("6_3hnwq")
@@ -256,6 +208,7 @@ script = ExtResource("6_3hnwq")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ac3xo")
 autoplay = true
+bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -263,7 +216,7 @@ libraries = {
 }
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.481348, 0.746736, 0.0337292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.481348, 0.746736, 0.0337292)
 
 [node name="Escenario_Oficina_SueloTecho1" parent="Node3D" instance=ExtResource("10_7kvr5")]
 
@@ -416,5 +369,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55364, 0.541281, -0.325211
 
 [node name="Escenario_Oficina_SueloTecho2" parent="Node3D" instance=ExtResource("60_0rpe2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.97409, 0)
+
+[node name="DirectionalLight3D" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.666667, 0, 0, 0, 0.113015, 0.657018, 0, -0.657018, 0.113015, 5.29743, 3.87302, 2.86069)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D2" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.666667, 0, 0, 0, 0.113015, 0.657018, 0, -0.657018, 0.113015, 1.38496, 3.87302, 2.86069)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D3" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.666667, 0, 0, 0, 0.113015, 0.657018, 0, -0.657018, 0.113015, -1.48496, 3.87302, 2.86069)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D4" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.666667, 0, 0, 0, 0.113015, 0.657018, 0, -0.657018, 0.113015, -5.39744, 3.87302, 2.86069)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D5" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.666667, 0, 0, 0, 0.113015, 0.657018, 0, -0.657018, 0.113015, -1.48496, 3.87302, -3.09786)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
+
+[node name="DirectionalLight3D6" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.666667, 0, 0, 0, 0.113015, 0.657018, 0, -0.657018, 0.113015, -5.39744, 3.87302, -3.09786)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.905
+spot_angle = 80.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

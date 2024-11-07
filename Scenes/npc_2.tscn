@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceydwgo2i6jn5"]
+[gd_scene load_steps=6 format=3 uid="uid://ceydwgo2i6jn5"]
 
 [ext_resource type="Script" path="res://NPC2.gd" id="1_u87dn"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_5moo8"]
+[ext_resource type="PackedScene" uid="uid://buwfti4ucgnvv" path="res://Assets/Models/Characters/woman.tscn" id="3_xnxa0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fcfxk"]
 radius = 1.87379
@@ -24,6 +25,9 @@ texture = ExtResource("2_5moo8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("BoxShape3D_pjcba")
+
+[node name="Woman" parent="." instance=ExtResource("3_xnxa0")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -0.3, 0)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

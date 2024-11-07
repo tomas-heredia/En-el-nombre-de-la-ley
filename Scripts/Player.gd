@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 
-
+@onready var animation_player = $model/AnimationPlayer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -21,9 +21,11 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
+			animation_player.play("woman/run")
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
+			animation_player.play("woman/idle")
 	else :
 		velocity.x = 0
 		velocity.z = 0

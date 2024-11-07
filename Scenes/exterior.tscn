@@ -171,7 +171,7 @@ environment = ExtResource("4_bnewo")
 camera_attributes = ExtResource("10_gasop")
 
 [node name="Player" parent="." instance=ExtResource("3_6amup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365672, 1.54047, -0.861486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55796, 1.54047, 9.7317)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
@@ -196,7 +196,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_hjbk3")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -0.07878, 3.05371, 2.42929)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 4.84485, 3.05371, 13.0225)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("8_nucu7")

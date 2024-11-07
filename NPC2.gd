@@ -4,8 +4,8 @@ var interactuable :bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	$Label.position.x = $Marker3D.position.x
-	$Label.position.y = $Marker3D.position.y
+	#$Label.position.x = $Marker3D.position.x
+	#$Label.position.y = $Marker3D.position.y
 	$Label.visible = false
 	
 

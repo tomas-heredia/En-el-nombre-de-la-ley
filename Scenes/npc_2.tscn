@@ -15,6 +15,7 @@ script = ExtResource("1_u87dn")
 [node name="Interaccion" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interaccion"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("SphereShape3D_fcfxk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -24,15 +25,25 @@ shape = SubResource("BoxShape3D_pjcba")
 [node name="Woman" parent="." instance=ExtResource("3_xnxa0")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.3, 0)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(7.53025, 6.58387)
-text = "\"E\""
-metadata/_edit_use_anchors_ = true
-
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(0.986881, 0.0735723, 0.143711, 0.131797, -0.881243, -0.453918, 0.0932485, 0.466904, -0.879378, 0, 0.571135, 0)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "Presiona la tecla \"E\" o el botón \"A\" 
+para interactuar"
+horizontal_alignment = 1
 
 [connection signal="area_entered" from="Interaccion" to="." method="_on_interaccion_area_entered"]
 [connection signal="area_exited" from="Interaccion" to="." method="_on_interaccion_area_exited"]

@@ -23,6 +23,7 @@ shape = SubResource("BoxShape3D_pjcba")
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.3, 0)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(7.53025, 6.58387)

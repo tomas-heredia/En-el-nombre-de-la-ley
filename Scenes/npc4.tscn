@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://p6v28xrqgp56"]
+[gd_scene load_steps=5 format=3 uid="uid://c2laaqoox26hh"]
 
-[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_ikdvd"]
-[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_6oan0"]
-[ext_resource type="PackedScene" uid="uid://d2pevnx27iau8" path="res://Assets/Models/Characters/man.tscn" id="3_jif2n"]
+[ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_xqmgh"]
+[ext_resource type="PackedScene" uid="uid://d2pevnx27iau8" path="res://Assets/Models/Characters/man.tscn" id="3_2di45"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fcfxk"]
 radius = 1.87379
@@ -11,7 +10,6 @@ radius = 1.87379
 
 [node name="NPC" type="RigidBody3D"]
 collision_mask = 3
-script = ExtResource("1_ikdvd")
 
 [node name="Interaccion" type="Area3D" parent="."]
 
@@ -22,13 +20,13 @@ shape = SubResource("SphereShape3D_fcfxk")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.494975, 0.494975, 0, -0.494975, 0.494975, 0, 0, 0)
 visible = false
-texture = ExtResource("2_6oan0")
+texture = ExtResource("2_xqmgh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("BoxShape3D_pjcba")
 
-[node name="male" parent="." instance=ExtResource("3_jif2n")]
+[node name="male" parent="." instance=ExtResource("3_2di45")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.4, 0)
 
 [node name="Label" type="Label" parent="."]

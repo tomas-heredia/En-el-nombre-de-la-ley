@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=4 uid="uid://f7wrprvlt3ds"]
+
+[ext_resource type="PackedScene" uid="uid://dgd2ohs6xbo11" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_SueloTecho.glb" id="1_tftmn"]
+[ext_resource type="Texture2D" uid="uid://bahmvwhk4jnvm" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_SueloTecho_2.png" id="2_jy6u7"]
+[ext_resource type="Texture2D" uid="uid://b06fo6fo4sonx" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_SueloTecho_1.jpg" id="3_5ga3s"]
+[ext_resource type="Texture2D" uid="uid://dy4hrfg4ik7m1" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_SueloTecho_0.png" id="4_2m48i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_am83v"]
+resource_name = "SSPE_Mat"
+albedo_texture = ExtResource("2_jy6u7")
+metallic = 1.0
+metallic_texture = ExtResource("3_5ga3s")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_5ga3s")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(0.864756, 0.758958, 1, 1)
+emission_energy_multiplier = 0.02
+normal_enabled = true
+normal_texture = ExtResource("4_2m48i")
+ao_enabled = true
+ao_texture = ExtResource("3_5ga3s")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_icqsi"]
+_surfaces = [{
+"aabb": AABB(-0.00512484, -4.94385e-05, -0.0053499, 0.00998022, 0.000570679, 0.0103831),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAgADAAEABAAFAAAABQACAAAAAQADAAYAAwAHAAYAAAABAAQAAQAGAAQABQAHAAIABwADAAIABAAGAAUABgAHAAUA"),
+"name": "SSPE_Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAD//wAA/v8AAP////8AAAAA//8AAAAAAAAAAP////8AAAAA//8AAAAAAAAAAP7/AAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8mqey"]
+resource_name = "Escenario_Entrada_SueloTecho_SueloTecho"
+_surfaces = [{
+"aabb": AABB(-0.00512484, -4.94385e-05, -0.0053499, 0.00998022, 0.000570679, 0.0103831),
+"attribute_data": PackedByteArray("DvhzmdD7c5kP+AxV0fsMVU62cpkO+HOZT7YLVQ/4DFUP+OMMULbiDA/4SlFPtklRDvhzmU62cpkO+DWdTrY0nU+2C1UP+AxVT7ZJUQ/4SlFOtnKZT7YLVYyycpmNsgtV"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAgADAAEABAAGAAUABgAHAAUACAAKAAkACgALAAkADAAOAA0ADgAPAA0AEAASABEAEgATABEAFAAWABUAFgAXABUA"),
+"material": SubResource("StandardMaterial3D_am83v"),
+"name": "SSPE_Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("////////VNX//wAA/v9U1f////8AAFTV//8AAAAAVNUAAP//////v/////////+/AAD//wAA/7//////AAD/v///AAD+//+/AAAAAP7//7///wAAAAD/vwAAAAAAAP+/////////AIAAAP////8AgP//AAD+/wCAAAAAAP7/AIAAAP//AAD///////8AAP//AAAAAAAA/////wAAAAD//wAA/////1XVAAD//wAAVdUAAAAA/v9V1QAAAAAAAFXVqapUVamqVFWpqlRVqapUVf7//X/+//1//v/9f/7//X8AAAGAAAABgAAAAYAAAAGAAADumwAA/JsAAPybAAAKnP7//n/+//5//v/+f/7//n9U1VXVVNVV1VTVVdVU1VTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_icqsi")
+
+[node name="Escenario_Entrada_SueloTecho" instance=ExtResource("1_tftmn")]
+
+[node name="SueloTecho" parent="Kit1" index="0"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Kit1" index="1"]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8mqey")
+skeleton = NodePath("../SueloTecho")

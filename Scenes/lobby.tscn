@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d4mlqgcuvt25g"]
+[gd_scene load_steps=43 format=3 uid="uid://d4mlqgcuvt25g"]
 
 [ext_resource type="PackedScene" uid="uid://ceydwgo2i6jn5" path="res://Scenes/npc_2.tscn" id="1_jkrlk"]
 [ext_resource type="PackedScene" uid="uid://bxljkh1k0pmea" path="res://Scenes/player.tscn" id="2_lvkoe"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://cvbrearuejla6" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_PilarCilindricoGrande.glb" id="19_dhj4h"]
 [ext_resource type="PackedScene" uid="uid://bihvmnf4my8sv" path="res://Assets/Models/Environment/Lobby/Escenario_Entrada_BarandaCorta.glb" id="20_xfh0s"]
 [ext_resource type="PackedScene" uid="uid://brg8t1tse72wf" path="res://Assets/Models/Environment/Lobby/Escenario_Entraada_PuertaNegra.glb" id="21_q66pv"]
+[ext_resource type="PackedScene" uid="uid://f7wrprvlt3ds" path="res://Assets/Models/Environment/Lobby/lobby_suelo_techo.tscn" id="23_ynr3r"]
+[ext_resource type="PackedScene" uid="uid://c2laaqoox26hh" path="res://Scenes/npc4.tscn" id="24_unfin"]
 
 [sub_resource type="GDScript" id="GDScript_av6tx"]
 script/source = "extends Node3D
@@ -199,12 +201,6 @@ offset_right = 28.0
 offset_bottom = 54.0
 scale = Vector2(11.9658, 6.83689)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.385503, 3.5794, -7.59692)
-light_energy = 3.909
-shadow_enabled = true
-spot_angle = 79.8
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f5ryl")
 camera_attributes = ExtResource("8_dlj2s")
@@ -213,7 +209,7 @@ camera_attributes = ExtResource("8_dlj2s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93903, 1.44599, -0.861486)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player" groups=["camara"]]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
+transform = Transform3D(1, 0, 0, 0, 0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 1.3, 2.8)
 script = ExtResource("3_6gqth")
 tween_resource = SubResource("Resource_25s27")
 camera_3d_resource = SubResource("Resource_7n8oq")
@@ -234,7 +230,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_uk5b4")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camara"]]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, -7.65214, 2.95923, 2.42929)
+transform = Transform3D(1, 0, 0, 0, 0.939692, 0.34202, 0, -0.34202, 0.939692, -7.93903, 2.74599, 1.93851)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("8_sdnfj")
@@ -250,46 +246,11 @@ autoplay = true
 bus = &"Music"
 
 [node name="PuertaAExterior" parent="." instance=ExtResource("10_88r6j")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.5784, 1.62768, -2.09981)
+transform = Transform3D(-6.90718e-07, 0, 1, 0, 1, 0, -15.8018, 0, -4.37114e-08, -13.3779, 1.62768, -2.09981)
+visible = false
 script = ExtResource("11_l2rbk")
 
 [node name="Label3D" type="Label3D" parent="PuertaAExterior"]
-transform = Transform3D(3.59067, 0, 0, 0, 3.59067, 0, 0, 0, 3.59067, 0, 1.39395, 0)
-visible = false
-text = "A Exterior"
-
-[node name="PuertaAExterior2" parent="." instance=ExtResource("10_88r6j")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.5784, 1.62768, 0.686018)
-script = ExtResource("11_l2rbk")
-
-[node name="Label3D" type="Label3D" parent="PuertaAExterior2"]
-transform = Transform3D(3.59067, 0, 0, 0, 3.59067, 0, 0, 0, 3.59067, 0, 1.39395, 0)
-visible = false
-text = "A Exterior"
-
-[node name="PuertaAExterior3" parent="." instance=ExtResource("10_88r6j")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.5784, 1.62768, -5.39579)
-script = ExtResource("11_l2rbk")
-
-[node name="Label3D" type="Label3D" parent="PuertaAExterior3"]
-transform = Transform3D(3.59067, 0, 0, 0, 3.59067, 0, 0, 0, 3.59067, 0, 1.39395, 0)
-visible = false
-text = "A Exterior"
-
-[node name="PuertaAExterior4" parent="." instance=ExtResource("10_88r6j")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.5784, 1.62768, 3.97059)
-script = ExtResource("11_l2rbk")
-
-[node name="Label3D" type="Label3D" parent="PuertaAExterior4"]
-transform = Transform3D(3.59067, 0, 0, 0, 3.59067, 0, 0, 0, 3.59067, 0, 1.39395, 0)
-visible = false
-text = "A Exterior"
-
-[node name="PuertaAExterior5" parent="." instance=ExtResource("10_88r6j")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.5784, 1.62768, 6.86545)
-script = ExtResource("11_l2rbk")
-
-[node name="Label3D" type="Label3D" parent="PuertaAExterior5"]
 transform = Transform3D(3.59067, 0, 0, 0, 3.59067, 0, 0, 0, 3.59067, 0, 1.39395, 0)
 visible = false
 text = "A Exterior"
@@ -310,6 +271,7 @@ transform = Transform3D(3000, 0, 0, 0, 1550, 0, 0, 0, 3000, 0.285562, 7.26079, 1
 
 [node name="Escenario_Entrada_Suelo" parent="Scenery" instance=ExtResource("13_5en06")]
 transform = Transform3D(3000, 0, 0, 0, 1550, 0, 0, 0, 3000, 0.285562, -0.0410262, 1.04702)
+visible = false
 
 [node name="Escenario_Entrada_Pared" parent="Scenery" instance=ExtResource("14_rfupu")]
 transform = Transform3D(-8.74228e-06, 0, 2800, 0, 700, 0, -200, 0, -0.000122392, 0.373797, 0.585, 15.7619)
@@ -613,7 +575,7 @@ transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 9.
 transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -14.2656, 5.12424, -13.4867)
 
 [node name="Escenario_Entraada_PuertaNegra5" parent="Scenery" instance=ExtResource("21_q66pv")]
-transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -14.2656, 5.12424, 15.4114)
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -14.2667, 5.14297, 15.42)
 
 [node name="Boundaries" type="Node" parent="."]
 
@@ -648,5 +610,185 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.277
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/Node3D4/StaticBody3D"]
 shape = SubResource("BoxShape3D_mjy1q")
+
+[node name="Escenario_Entrada_SueloTecho" parent="." instance=ExtResource("23_ynr3r")]
+transform = Transform3D(3.2, 0, 0, 0, 1, 0, 0, 0, 4.068, 1.05562, 0.219084, 2.68781)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657251, 0.997838, 0, -0.24529, 0.0161566, 0, 2.10319, 1.34216)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 0, 2.10319, 0.510198)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 0, 2.10319, -0.298504)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 0, 2.10319, -1.28988)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 0, 2.10319, -2.12185)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 0, 2.10319, -2.93055)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, -1.45326, 2.10319, 1.34216)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, -1.45326, 2.10319, 0.510198)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, -1.45326, 2.10319, -0.298504)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D22" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, -1.45326, 2.10319, -1.28988)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D23" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, -1.45326, 2.10319, -2.12185)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D24" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, -1.45326, 2.10319, -2.93055)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 1.26421, 2.10319, 1.34216)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 1.26421, 2.10319, 0.510198)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 1.26421, 2.10319, -0.298504)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 1.26421, 2.10319, -1.28988)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 1.26421, 2.10319, -2.12185)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 1.26421, 2.10319, -2.93055)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 2.64597, 2.10319, 1.34216)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 2.64597, 2.10319, 0.510198)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 2.64597, 2.10319, -0.298504)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 2.64597, 2.10319, -1.28988)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 2.64597, 2.10319, -2.12185)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="Escenario_Entrada_SueloTecho"]
+transform = Transform3D(0.3125, 0, 0, 0, 0.0657252, 0.997838, 0, -0.24529, 0.0161566, 2.64597, 2.10319, -2.93055)
+light_energy = 2.0
+light_specular = 4.0
+light_bake_mode = 1
+spot_attenuation = 0.0
+
+[node name="NPC" parent="." instance=ExtResource("24_unfin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25913, 1.17224, -6.60616)
+
+[node name="NPC3" parent="." instance=ExtResource("24_unfin")]
+transform = Transform3D(-0.222059, 0, 0.975033, 0, 1, 0, -0.975033, 0, -0.222059, 3.80255, 1.17224, -1.49513)
+
+[node name="NPC4" parent="." instance=ExtResource("24_unfin")]
+transform = Transform3D(0.863352, 0, -0.504603, 0, 1, 0, 0.504603, 0, 0.863352, 5.03475, 1.17224, -2.01616)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://c6syw644kql1k"]
+[gd_scene load_steps=72 format=3 uid="uid://c6syw644kql1k"]
 
 [ext_resource type="Script" path="res://Scenes/oficina.gd" id="1_b3pie"]
 [ext_resource type="ArrayMesh" uid="uid://b8j3tir8dxlxx" path="res://Assets/Models/Environment/naturePack_001.obj" id="1_smdut"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_nlc8f"]
 [ext_resource type="PackedScene" uid="uid://c3ijloq7h81hq" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_Zocalo2.glb" id="5_f8wk0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_hkdgx"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_3hnwq"]
 [ext_resource type="AudioStream" uid="uid://x7by45sd04cb" path="res://Assets/sounds/music/lost.wav" id="7_ac3xo"]
 [ext_resource type="CameraAttributesPractical" uid="uid://bn600wucp2y1p" path="res://Style/defaultCameraAttributes.tres" id="8_tvxti"]
 [ext_resource type="PackedScene" uid="uid://wmmdo8i8v8oo" path="res://Assets/Models/Environment/Oficina/Escenario_Oficina_SueloTecho1.glb" id="10_7kvr5"]
@@ -189,7 +188,7 @@ shape = SubResource("ConcavePolygonShape3D_86hwj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72015, 1.15579, 3.58043)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0.286892, 1.51324, 3.29078)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0, 1.513, 2.5)
 script = ExtResource("3_tkcb8")
 follow_mode = 2
 tween_resource = SubResource("Resource_jsmwm")
@@ -200,10 +199,7 @@ environment = SubResource("Environment_qaj4q")
 camera_attributes = ExtResource("8_tvxti")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 5.00704, 2.66903, 6.87121)
-
-[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
-script = ExtResource("6_3hnwq")
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 4.72015, 2.66879, 6.08043)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ac3xo")

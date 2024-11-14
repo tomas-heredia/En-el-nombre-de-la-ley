@@ -1,54 +1,37 @@
 do Global.interaccion()
 join ciudadano1 left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-1 cuanta basura.wav" volume="1.0" bus="Voice"]
 ciudadano1: ¡Cuánta basura en la calle, che!
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-3 se veria tan linda.wav" volume="0.0" bus="Voice"]
 ciudadano1: Se vería tan linda la ciudad si estuviera más limpia…
 leave ciudadano1
 join ciudadano2 left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-2 deberia haber una ley.wav" volume="0.0" bus="Voice"]
 ciudadano2: Debería haber una ley o algo que incentive a las empresas y ciudadanos a ser más limpios, ¿no?
 leave ciudadano2
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-4 Y como se hace eso.wav" volume="0.0" bus="Voice"]
 protagonista: ¿Y cómo se hace eso?
 join ciudadano2 left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-5 viste ese edificio.wav" volume="0.0" bus="Voice"]
 ciudadano2: ¿Viste ese edificio al otro lado de la plaza?
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-6 es la legislatura.wav" volume="0.0" bus="Voice"]
 ciudadano2: Es la Legislatura. Ahí es donde se hacen las leyes.
 leave ciudadano2
 - ¿A esas leyes quien las hace?
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-8 a esas leyes.wav" volume="0.0" bus="Voice"]
 	protagonista: ¿A esas leyes quien las hace?
 - ¿Puedo ir yo a hacer unas leyes ahí dentro?
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1- 9 puedo ir yo.wav" volume="0.0" bus="Voice"]
 	protagonista: ¿Puedo ir yo a hacer unas leyes ahí dentro?
 join ciudadano2 left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-9 leyes las deciden.wav" volume="0.0" bus="Voice"]
 ciudadano2: Las leyes las deciden los legisladores…
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-10 pero entiendo.wav" volume="0.0" bus="Voice"]
 ciudadano2: …pero entiendo que los ciudadanos pueden muchas veces proponerlas y participar en su armado.
 leave ciudadano2
 - Podría probar…
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-11 poria probar.wav" volume="0.0" bus="Voice"]
 	protagonista: Podría probar…
 - ¡Yo quiero hacer unas leyes!
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-12 yo quiero hacer unas leyes.wav" volume="0.0" bus="Voice"]
 	protagonista: ¡Yo quiero hacer unas leyes!
-join ciudadano1 (incredulo) left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-13 crees que eso.wav" volume="0.0" bus="Voice"]
+join ciudadano1 (default) left
 ciudadano1: ¿Crees que eso funciona?
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-14 yo no entiendo nada.wav" volume="0.0" bus="Voice"]
 ciudadano1: Yo no entiendo nada de esas cosas, para mi es como otro mundo.
 leave ciudadano1
 - No se pierde nada con intentar, ¿no?
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-15 no se pierde nada.wav" volume="0.0" bus="Voice"]
 	protagonista: No se pierde nada con intentar, ¿no?
 - ¡Yo quiero hacer unas leyeees!
-	[voice path="res://Assets/sounds/dialogo/Acto 1/1-16 yo quiero hacer unas leyes.wav" volume="0.0" bus="Voice"]
 	protagonista: ¡Yo quiero hacer unas leyeees!
-join ciudadano2 (riendo) left
-[voice path="res://Assets/sounds/dialogo/Acto 1/1-17 Jaja me gusta.wav" volume="0.0" bus="Voice"]
+join ciudadano2 (default) left
 ciudadano2: ¡Jajaja! ¡Me gusta tu iniciativa!
 [wait time="0.5"]
 do Global.interaccion()

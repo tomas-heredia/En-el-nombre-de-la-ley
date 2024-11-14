@@ -783,7 +783,10 @@ light_bake_mode = 1
 spot_attenuation = 0.0
 
 [node name="NPC" parent="." instance=ExtResource("24_unfin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25913, 1.17224, -6.60616)
+transform = Transform3D(0.230101, 0, 0.973167, 0, 1, 0, -0.973167, 0, 0.230101, -10.1807, 1.17224, -3.41587)
+
+[node name="NPC5" parent="." instance=ExtResource("24_unfin")]
+transform = Transform3D(-0.13454, 0, -0.990908, 0, 1, 0, 0.990908, 0, -0.13454, -8.81344, 1.17224, -3.11046)
 
 [node name="NPC3" parent="." instance=ExtResource("24_unfin")]
 transform = Transform3D(-0.222059, 0, 0.975033, 0, 1, 0, -0.975033, 0, -0.222059, 3.80255, 1.17224, -1.49513)

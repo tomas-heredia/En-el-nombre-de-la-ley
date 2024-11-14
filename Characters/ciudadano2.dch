@@ -17,7 +17,7 @@
 "portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/ciudadana.png\""
+"image": "\"res://Assets/Textures/Personaje3.png\""
 },
 "ignore_char_scale": true,
 "mirror": false,

@@ -17,7 +17,7 @@
 "portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/legisladora.png\""
+"image": "\"res://Assets/Textures/chicaA.png\""
 },
 "mirror": false,
 "offset": Vector2(-280, 0),
@@ -26,7 +26,7 @@
 },
 "riendo": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/legisladora_variante1.png\""
+"image": "\"res://Assets/Textures/chicaA-variante.png\""
 },
 "mirror": false,
 "offset": Vector2(-280, 0),

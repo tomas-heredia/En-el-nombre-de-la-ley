@@ -17,7 +17,7 @@
 "portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/ciudadano.png\""
+"image": "\"res://Assets/Textures/chicoA.png\""
 },
 "mirror": false,
 "offset": Vector2(-250, 0),
@@ -26,7 +26,7 @@
 },
 "incredulo": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/ciudadano_variante1.png\""
+"image": "\"res://Assets/Textures/chicoA-variante.png\""
 },
 "mirror": false,
 "offset": Vector2(-250, 0),

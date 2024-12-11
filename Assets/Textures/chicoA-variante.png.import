@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dasiit6fhonty"
-path="res://.godot/imported/PersonajeA_Pensativo.png-b8fdc940f27d916708145cd7d38b4b36.ctex"
+uid="uid://hcxjk2yi7b35"
+path="res://.godot/imported/chicoA-variante.png-c51c5f6f2a51d7def0e7ca2dd47374d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/PersonajeA/PersonajeA_Pensativo.png"
-dest_files=["res://.godot/imported/PersonajeA_Pensativo.png-b8fdc940f27d916708145cd7d38b4b36.ctex"]
+source_file="res://Assets/Textures/chicoA-variante.png"
+dest_files=["res://.godot/imported/chicoA-variante.png-c51c5f6f2a51d7def0e7ca2dd47374d2.ctex"]
 
 [params]
 

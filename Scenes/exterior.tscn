@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dmf8c24mgc1ur"]
+[gd_scene load_steps=50 format=3 uid="uid://dmf8c24mgc1ur"]
 
 [ext_resource type="Script" path="res://Scripts/mundo.gd" id="1_mit0t"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_vrp4t"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://ckuv8dr7ma1vh" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BolsaBasura.glb" id="14_m1qs1"]
 [ext_resource type="PackedScene" uid="uid://bpmepqjxdyjyv" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BotellaG.glb" id="15_msgcq"]
 [ext_resource type="PackedScene" uid="uid://bpi5mauh1t4w2" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BotellaS.glb" id="16_astl6"]
+[ext_resource type="PackedScene" uid="uid://bqrjt56pdcmtm" path="res://Assets/Models/Environment/tree2.glb" id="16_c52f6"]
+[ext_resource type="PackedScene" uid="uid://crf2bsfas8ffe" path="res://Assets/Models/Environment/trees.glb" id="16_qyhtt"]
 [ext_resource type="PackedScene" uid="uid://bcmkm4c8evksv" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_CajaHamburguesa.glb" id="17_kh6k5"]
 [ext_resource type="PackedScene" uid="uid://bhfue7eybge50" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_CajaPizza.glb" id="18_7o2d7"]
 [ext_resource type="PackedScene" uid="uid://3n6aqh38p523" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Edificio1.glb" id="19_05uvn"]
@@ -30,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dhd5honi3baix" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_EdificioLegislatura.glb" id="27_bh2u6"]
 [ext_resource type="Shader" path="res://Assets/UI/transicion.gdshader" id="28_cedqy"]
 [ext_resource type="PackedScene" uid="uid://cc6xedd1smocg" path="res://Scenes/npc_3.tscn" id="30_p26bo"]
+[ext_resource type="PackedScene" uid="uid://bdsxw1yolls18" path="res://Assets/Models/Environment/bush.glb" id="32_tymto"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ya1g"]
 shader = ExtResource("28_cedqy")
@@ -258,12 +261,7 @@ shape = SubResource("BoxShape3D_ipar5")
 
 [node name="Escenario_Exterior_Arbol" parent="Scenery" instance=ExtResource("12_jf5s7")]
 transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 2.88063, 0.611773, 3.81681)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
+visible = false
 
 [node name="Escenario_Exterior_Arbol4" parent="Scenery" instance=ExtResource("12_jf5s7")]
 transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.4104, 0.611773, 6.92766)
@@ -271,6 +269,26 @@ transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.4104, 0.
 [node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_31lae")
+
+[node name="tree2" parent="Scenery" instance=ExtResource("16_c52f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26668, 0.626716, 6.10026)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/tree2"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/tree2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_31lae")
+
+[node name="trees" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88967, 0.626715, 3.81087)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
@@ -450,15 +468,6 @@ transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.4977, 0.
 [node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol22"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol22/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol2" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 5.30163, 0.261103, 6.01418)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
@@ -727,6 +736,9 @@ transform = Transform3D(82, 0, 0, 0, 82, 0, 0, 0, 82, -0.37985, 0.545643, -10.02
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_EdificioLegislatura/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00180665, 0, -0.00166626)
 shape = SubResource("BoxShape3D_c1ldv")
+
+[node name="bush" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3496, 0.340332, 5.62768)
 
 [node name="NPC3" parent="." instance=ExtResource("30_p26bo")]
 transform = Transform3D(0.830761, -0.00832512, -0.556567, 0.00691643, 0.999965, -0.00463365, 0.556586, 0, 0.83079, 2.96521, 1.08513, 0.171672)

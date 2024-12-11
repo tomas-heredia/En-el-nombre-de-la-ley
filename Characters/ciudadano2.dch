@@ -17,7 +17,7 @@
 "portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/ciudadana.png\""
+"image": "\"res://Assets/Textures/chicaB.png\""
 },
 "ignore_char_scale": true,
 "mirror": false,
@@ -27,7 +27,7 @@
 },
 "riendo": {
 "export_overrides": {
-"image": "\"res://Assets/Textures/ciudadana_variante1.png\""
+"image": "\"res://Assets/Textures/chicaB-variante.png\""
 },
 "mirror": false,
 "offset": Vector2(-280, 40),

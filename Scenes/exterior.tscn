@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dmf8c24mgc1ur"]
+[gd_scene load_steps=55 format=3 uid="uid://dmf8c24mgc1ur"]
 
 [ext_resource type="Script" path="res://Scripts/mundo.gd" id="1_mit0t"]
 [ext_resource type="Texture2D" uid="uid://bu34l0gdwe8gp" path="res://Characters/icon.svg" id="2_vrp4t"]
@@ -13,8 +13,6 @@
 [ext_resource type="CameraAttributesPractical" uid="uid://bn600wucp2y1p" path="res://Style/defaultCameraAttributes.tres" id="10_gasop"]
 [ext_resource type="PackedScene" uid="uid://bqk73ddy5gpmx" path="res://Scenes/puerta.tscn" id="10_j3fso"]
 [ext_resource type="AudioStream" uid="uid://x7by45sd04cb" path="res://Assets/sounds/music/lost.wav" id="11_u8jy0"]
-[ext_resource type="PackedScene" uid="uid://bttj4nde1m2fu" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Arbol.glb" id="12_jf5s7"]
-[ext_resource type="PackedScene" uid="uid://bmmxp2c6v6168" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_Arbusto.glb" id="13_iecwn"]
 [ext_resource type="PackedScene" uid="uid://ckuv8dr7ma1vh" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BolsaBasura.glb" id="14_m1qs1"]
 [ext_resource type="PackedScene" uid="uid://bpmepqjxdyjyv" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BotellaG.glb" id="15_msgcq"]
 [ext_resource type="PackedScene" uid="uid://bpi5mauh1t4w2" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_BotellaS.glb" id="16_astl6"]
@@ -32,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dhd5honi3baix" path="res://Assets/Models/Environment/Exterior/Escenario_Exterior_EdificioLegislatura.glb" id="27_bh2u6"]
 [ext_resource type="Shader" path="res://Assets/UI/transicion.gdshader" id="28_cedqy"]
 [ext_resource type="PackedScene" uid="uid://cc6xedd1smocg" path="res://Scenes/npc_3.tscn" id="30_p26bo"]
+[ext_resource type="Texture2D" uid="uid://bx2n8wonq30b1" path="res://Assets/Textures/gota.png" id="32_kxtel"]
 [ext_resource type="PackedScene" uid="uid://bdsxw1yolls18" path="res://Assets/Models/Environment/bush.glb" id="32_tymto"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ya1g"]
@@ -126,10 +125,6 @@ size = Vector3(40, 20, 1)
 height = 0.1
 radius = 0.005
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_4cwp7"]
-height = 0.05
-radius = 0.01
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_2yevf"]
 size = Vector3(0.0537292, 0.1, 0.0637451)
 
@@ -142,6 +137,46 @@ size = Vector3(0.0225586, 0.0735596, 0.00784912)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c1ldv"]
 size = Vector3(0.19502, 0.1, 0.0953735)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4cwp7"]
+height = 0.05
+radius = 0.01
+
+[sub_resource type="Curve" id="Curve_4jlfy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3mte5"]
+curve = SubResource("Curve_4jlfy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wwuvb"]
+direction = Vector3(0, 1, 0)
+spread = 20.0
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, -9, 0)
+alpha_curve = SubResource("CurveTexture_3mte5")
+
+[sub_resource type="Curve" id="Curve_8ia5q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.996441, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhqup"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("32_kxtel")
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_v1211"]
+material = SubResource("StandardMaterial3D_mhqup")
+shape = 0
+size = 0.1
+sections = 12
+section_length = 0.02
+section_segments = 4
+curve = SubResource("Curve_8ia5q")
 
 [node name="Mundo" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230814, -0.183464, 0.240302)
@@ -259,19 +294,6 @@ shape = SubResource("BoxShape3D_ipar5")
 
 [node name="Scenery" type="Node" parent="."]
 
-[node name="Escenario_Exterior_Arbol" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 2.88063, 0.611773, 3.81681)
-visible = false
-
-[node name="Escenario_Exterior_Arbol4" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.4104, 0.611773, 6.92766)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
 [node name="tree2" parent="Scenery" instance=ExtResource("16_c52f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26668, 0.626716, 6.10026)
 
@@ -279,6 +301,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26668, 0.626716, 6.10026)
 transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/tree2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_31lae")
+
+[node name="tree3" parent="Scenery" instance=ExtResource("16_c52f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.70821, 0.626716, 4.40108)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/tree3"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/tree3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_31lae")
+
+[node name="tree6" parent="Scenery" instance=ExtResource("16_c52f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86872, 0.626716, 11.7011)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/tree6"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/tree6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_31lae")
+
+[node name="tree7" parent="Scenery" instance=ExtResource("16_c52f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10843, 0.626715, 7.45835)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/tree7"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/tree7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_31lae")
+
+[node name="tree5" parent="Scenery" instance=ExtResource("16_c52f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65924, 0.626716, -11.266)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/tree5"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/tree5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_31lae")
+
+[node name="tree4" parent="Scenery" instance=ExtResource("16_c52f6")]
+transform = Transform3D(0.38721, 0, 0.921992, 0, 1, 0, -0.921992, 0, 0.38721, 13.385, 0.626716, 6.94332)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/tree4"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/tree4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
@@ -292,319 +364,75 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
-[node name="Escenario_Exterior_Arbol5" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.2382, 0.611773, 3.43577)
+[node name="trees6" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1193, 0.626715, 13.4229)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
-[node name="Escenario_Exterior_Arbol6" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.71919, 0.611773, 15.5644)
+[node name="trees7" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(0.592997, 0, -0.805204, 0, 1, 0, 0.805204, 0, 0.592997, 9.09579, 0.626715, 15.1801)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
-[node name="Escenario_Exterior_Arbol7" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 14.0163, 0.611773, 13.4489)
+[node name="trees8" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68216, 0.610623, 15.2749)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
-[node name="Escenario_Exterior_Arbol8" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.223, 0.611773, 15.4983)
+[node name="trees3" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3512, 0.626715, -8.02405)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
-[node name="Escenario_Exterior_Arbol9" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.37272, 0.611773, 15.4983)
+[node name="trees4" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1146, 0.626715, -11.9902)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
-[node name="Escenario_Exterior_Arbol10" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 2.77774, 0.611773, 11.664)
+[node name="trees2" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1366, 0.626715, 3.72388)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
 
-[node name="Escenario_Exterior_Arbol11" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -8.19636, 0.611773, 15.5644)
+[node name="trees5" parent="Scenery" instance=ExtResource("16_qyhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5152, 0.626715, -8.01969)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/trees5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117447, -0.000194191, 7.72215e-05)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/trees5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
 shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol12" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.675, 0.611773, 9.74682)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol12"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol12/StaticBody3D"]
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol13" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.675, 0.611773, 4.19366)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol13"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol13/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol14" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.675, 0.611773, 7.03635)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol14"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol14/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol15" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.675, 0.611773, 12.5895)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol15"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol15/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol16" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -14.675, 0.611773, 15.4322)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol16"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol16/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol17" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.3366, 0.611773, -12.7988)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol17"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol17/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol18" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.4977, 0.611773, -12.7988)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol18"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol18/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol19" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.3366, 0.611773, -10.4604)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol19"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol19/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol20" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.4977, 0.611773, -10.4604)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol20"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol20/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol21" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.3366, 0.611773, -8.03198)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol21"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol21/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol23" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -9.97407, 0.611773, -11.9902)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol23"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol23/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol24" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.16015, 0.611773, -12.0595)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol24"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol24/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol22" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.4977, 0.611773, -8.03198)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol22"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol22/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbol3" parent="Scenery" instance=ExtResource("12_jf5s7")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.74312, 0.261103, 4.39067)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbol3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbol3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_31lae")
-
-[node name="Escenario_Exterior_Arbusto" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.2271, 0.665533, 5.51432)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto2" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.3015, 0.665533, 5.8194)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto4" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.6032, 0.665533, 11.8256)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto5" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 11.7133, 0.665533, 15.3898)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto6" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 4.70849, 0.665533, 15.3898)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto7" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 3.09908, 0.665533, 13.8469)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto7/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto8" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -8.64767, 0.665533, 9.69457)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto8"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto8/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto9" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -10.4543, 0.665533, 9.69457)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto9"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto9/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto10" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -12.4447, 0.665533, 9.69457)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto10"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto10/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto11" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -9.48209, 0.665533, -8.53785)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto11"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto11/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto12" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, -10.5458, 0.665533, -9.37201)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto12"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto12/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto13" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 8.8492, 0.665533, -8.73723)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto13"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto13/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto14" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 9.78209, 0.665533, -9.61127)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto14"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto14/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
-
-[node name="Escenario_Exterior_Arbusto3" parent="Scenery" instance=ExtResource("13_iecwn")]
-transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 13.65, 0.665533, 4.77116)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Escenario_Exterior_Arbusto3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Escenario_Exterior_Arbusto3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
-shape = SubResource("CylinderShape3D_4cwp7")
 
 [node name="Escenario_Exterior_BolsaBasura" parent="Scenery" instance=ExtResource("14_m1qs1")]
 transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 2.5847, 0.480579, 3.05494)
@@ -740,7 +568,93 @@ shape = SubResource("BoxShape3D_c1ldv")
 [node name="bush" parent="Scenery" instance=ExtResource("32_tymto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3496, 0.340332, 5.62768)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
+[node name="bush2" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6424, 0.340332, 5.24462)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush2"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
+[node name="bush4" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29878, 0.340332, -8.37087)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush4"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
+[node name="bush5" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6548, 0.340332, -8.78406)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush5"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
+[node name="bush3" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2477, 0.340332, 5.33114)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush3"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
+[node name="bush6" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39238, 0.340332, 12.9425)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush6"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
+[node name="bush8" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26212, 0.340332, 10.3073)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush8"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
+[node name="bush7" parent="Scenery" instance=ExtResource("32_tymto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3315, 0.340333, 11.5323)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/bush7"]
+transform = Transform3D(76.9462, 0, 0, 0, 76.9462, 0, 0, 0, 76.9462, 0, 0.325, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/bush7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.00639e-05)
+shape = SubResource("CylinderShape3D_4cwp7")
+
 [node name="NPC3" parent="." instance=ExtResource("30_p26bo")]
 transform = Transform3D(0.830761, -0.00832512, -0.556567, 0.00691643, 0.999965, -0.00463365, 0.556586, 0, 0.83079, 2.96521, 1.08513, 0.171672)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21779, 2.10193, 10.4902)
+amount = 40
+lifetime = 3.0
+trail_enabled = true
+trail_lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_wwuvb")
+draw_pass_1 = SubResource("RibbonTrailMesh_v1211")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

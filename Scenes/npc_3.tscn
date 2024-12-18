@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc6xedd1smocg"]
 
-[ext_resource type="PackedScene" uid="uid://buwfti4ucgnvv" path="res://Assets/Models/Characters/woman.tscn" id="2_cfnfs"]
+[ext_resource type="PackedScene" uid="uid://clasbamt7srdn" path="res://Assets/Models/Characters/chica_1.tscn" id="1_8cmue"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fcfxk"]
 radius = 1.87379
@@ -10,6 +10,9 @@ radius = 1.87379
 [node name="NPC3" type="RigidBody3D"]
 collision_mask = 3
 
+[node name="chica1" parent="." instance=ExtResource("1_8cmue")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.3, 0)
+
 [node name="Interaccion" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interaccion"]
@@ -18,9 +21,6 @@ shape = SubResource("SphereShape3D_fcfxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("BoxShape3D_pjcba")
-
-[node name="Woman" parent="." instance=ExtResource("2_cfnfs")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.3, 0)
 
 [node name="Label" type="Label" parent="."]
 visible = false

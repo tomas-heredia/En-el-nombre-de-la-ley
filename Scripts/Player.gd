@@ -7,6 +7,9 @@ var direction = Vector3(0,0,0)
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready() -> void:
+	animation_player.play("idle")
+
 func _process(delta):
 	pass
 	#var xform: Transform3D = global_transform.looking_at(global_position - direction , Vector3.UP) 
@@ -33,13 +36,13 @@ func _physics_process(delta):
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 			rotar(direction)
-			animation_player.play("woman/run")
+			animation_player.play("run")
 			
 			
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-			animation_player.play("woman/idle")
+			animation_player.play("idle")
 		
 	else :
 		velocity.x = 0

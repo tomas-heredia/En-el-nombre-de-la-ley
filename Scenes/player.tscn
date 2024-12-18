@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxljkh1k0pmea"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6jwqf"]
-[ext_resource type="PackedScene" uid="uid://buwfti4ucgnvv" path="res://Assets/Models/Characters/woman.tscn" id="4_a2l5c"]
+[ext_resource type="PackedScene" uid="uid://cphfx8js5xab1" path="res://Assets/Models/Characters/chico2.glb" id="2_i0t3x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4x0i2"]
 size = Vector3(1.21637, 1, 1)
@@ -16,11 +16,11 @@ script = ExtResource("1_6jwqf")
 transform = Transform3D(0.557883, 0, 0, 0, 0.557883, 0, 0, 0, 0.557883, 0.0159607, 0, 0)
 shape = SubResource("BoxShape3D_4x0i2")
 
-[node name="model" parent="." instance=ExtResource("4_a2l5c")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.3, 0)
-
 [node name="Interaccion" type="Area3D" parent="." groups=["Player"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interaccion"]
 transform = Transform3D(1.24323, 0, 0, 0, 1.04751, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("SphereShape3D_b2bue")
+
+[node name="model" parent="." instance=ExtResource("2_i0t3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)

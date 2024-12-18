@@ -220,7 +220,7 @@ tween_resource = SubResource("Resource_mev1u")
 camera_3d_resource = SubResource("Resource_6h4hq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32861, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 visible = false
 navigation_mesh = SubResource("NavigationMesh_xs8mw")
 
@@ -646,7 +646,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89538e-05, 0.000107722, 8.0
 shape = SubResource("CylinderShape3D_4cwp7")
 
 [node name="NPC3" parent="." instance=ExtResource("30_p26bo")]
-transform = Transform3D(0.830761, -0.00832512, -0.556567, 0.00691643, 0.999965, -0.00463365, 0.556586, 0, 0.83079, 2.96521, 1.08513, 0.171672)
+transform = Transform3D(-0.0266116, -0.00444806, -0.999636, 0.00691643, 0.999965, -0.00463365, 0.999622, -0.00703722, -0.02658, 2.96521, 1.08513, 0.171672)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21779, 2.10193, 10.4902)

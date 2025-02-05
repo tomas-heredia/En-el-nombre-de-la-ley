@@ -1,59 +1,67 @@
 do Global.interaccion()
-join legisladora left
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-1 Buen dia joven.wav" volume="0.0" bus="Voice"]
-legisladora: ¡Buen día, joven!
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-2 me anunciaron.wav" volume="0.0" bus="Voice"]
-legisladora: Me anunciaron que venías por un tema de una propuesta de ley, ¿es así?
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-3 contame.wav" volume="0.0" bus="Voice"]
-legisladora: Contame.
-leave legisladora
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-4 si, es acerca.wav" volume="0.0" bus="Voice"]
-protagonista: ¡Si! Es acerca de la basura que generamos como tucumanos.
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-5 no deberiamos.wav" volume="0.0" bus="Voice"]
-protagonista: ¿No deberíamos regular la forma de la que tratamos la basura?
-join legisladora left
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-6 estoy de acuerdo.wav" volume="0.0" bus="Voice"]
-legisladora: Estoy de acuerdo, mejoraría nuestra calidad de vida.
-label como tratar
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-7 como propones tratar el tema.wav" volume="0.0" bus="Voice"]
-legisladora: ¿Cómo propones tratar el tema?
-- ¿Con educación? | [=""]
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-8 con educacion.wav" volume="0.0" bus="Voice"]
-	protagonista: ¿Con educación?
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-11 tiene sentido.wav" volume="0.0" bus="Voice"]
-	legisladora: Tiene sentido, si.
-	jump sigue
-- Con una planta de tratamiento de residuos.
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-9 con una planta.wav" volume="0.0" bus="Voice"]
-	protagonista: Con una planta de tratamiento de residuos.
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-11 tiene sentido.wav" volume="0.0" bus="Voice"]
-	legisladora: Tiene sentido, si.
-	jump sigue
-	return
-- ¡Con un monstruo que devore basura!
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-10 con un monstruo.wav" volume="0.0" bus="Voice"]
-	protagonista: ¡Con un monstruo que devore basura!
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-14 no estoy segura.wav" volume="0.0" bus="Voice"]
-	legisladora (riendo): Mmmm… No estoy segura que sea lo mejor…
-	jump como tratar
-label sigue
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-12 como te gustaria.wav" volume="0.0" bus="Voice"]
-legisladora (default): ¿Como te gustaría que empecemos?
-label saber mas
-[voice path="res://Assets/sounds/dialogo/Acto 2/2-13 queres que te cuente.wav" volume="0.0" bus="Voice"]
-legisladora: ¿Querés que te cuente algo sobre la Legislatura?
-- ¿Que es un legislador exactamente? ¿Qué hacen?
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-15 que es un legislador.wav" volume="0.0" bus="Voice"]
-	protagonista: ¿Que es un legislador exactamente? ¿Qué hacen?
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-18 un legislador es como vos.wav" volume="0.0" bus="Voice"]
-	legisladora: Un legislador es, ante todo, un ciudadano como vos y yo.
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-19 nuestra funcion principal.wav" volume="0.0" bus="Voice"]
-	legisladora: Nuestra función principal es proponer, debatir y aprobar nuevas leyes que buscan mejorar la vida en nuestra comunidad.
-	jump saber mas
-- ¿Me podes contar sobre la Legislatura?
-	[voice path="res://Assets/sounds/dialogo/Acto 2/2-16 me podes contar.wav" volume="0.0" bus="Voice"]
-	protagonista: ¿Me podes contar sobre la Legislatura?
-	[signal arg="a_esc3"]
-- Creo que voy a dar un paseo.
-	protagonista: Creo que voy a dar un paseo.
-	[end_timeline]
+join ciudadano2 left
+ciudadano2: Elige un legislador/a\:
+leave ciudadano2
+- Alfaro, Rolando Rene
+	protagonista: Alfaro, Rolando Rene
+- Álvarez, Roque Tobías
+	protagonista: Álvarez, Roque Tobías
+- Argañaraz, Roque Eduardo
+	protagonista: Argañaraz, Roque Eduardo
+- Assan, Sara
+	protagonista: Assan, Sara
+- Berarducci, Walter
+	protagonista: Berarducci, Walter
+- Bulacio, Nancy Evangelina
+	protagonista: Bulacio, Nancy Evangelina
+- Bussi, Ricardo Argentino
+	protagonista: Bussi, Ricardo Argentino
+- Cano, José Manuel
+	protagonista: Cano, José Manuel
+- Caponio, Tulio Enrique
+	protagonista: Caponio, Tulio Enrique
+- Cejas, María Alejandra
+	protagonista: Cejas, María Alejandra
+- Cobos, Tomas
+	protagonista: Cobos, Tomas
+- Courel, Manuel
+	protagonista: Courel, Manuel
+- Elías De Pérez, Silvia
+	protagonista: Elías De Pérez, Silvia
+- Figueroa Alejandro Matías
+	protagonista: Figueroa Alejandro Matías
+- Figueroa Sandra Beatriz
+	protagonista: Figueroa Sandra Beatriz
+- Fúñez, Carlos Eliezer
+	protagonista: Fúñez, Carlos Eliezer
+- Gallia, Carlos Sebastián
+	protagonista: Gallia, Carlos Sebastián
+- Galván, Paula Lujan
+	protagonista: Galván, Paula Lujan
+- Gomez Gomez Rossi, José
+	protagonista: Gomez Gomez Rossi, José
+- Gómez, Carlos Francisco
+	protagonista: Gómez, Carlos Francisco
+- Herrera, Jesús Marcelo
+	protagonista: Herrera, Jesús Marcelo
+- Herrera, Walter Daniel
+	protagonista: Herrera, Walter Daniel
+- Lazarte, Sara Elisabeth
+	protagonista: Lazarte, Sara Elisabeth
+- Leal, Jorge Abraham
+	protagonista: Leal, Jorge Abraham
+- Ledesma, Hugo
+	protagonista:  Ledesma, Hugo
+- Leito, Mario Alberto
+	protagonista: Leito, Mario Alberto
+- Macome, José Ignacio
+	protagonista: Macome, José Ignacio
+- Mansilla, Sergio Francisco
+	protagonista:  Mansilla, Sergio Francisco
+- Martínez, Maia Vanesa
+	protagonista:  Martínez, Maia Vanesa
+- Moreno Raúl Roberto
+	protagonista: Moreno Raúl Roberto
+join ciudadano2 left
+ciudadano2: ¡Perfecto! Podes ir a su oficina.
+[end_timeline]

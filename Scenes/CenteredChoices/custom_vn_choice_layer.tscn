@@ -9,96 +9,286 @@
 [sub_resource type="AudioStream" id="AudioStream_pe27w"]
 
 [node name="VN_ChoiceLayer" type="Control"]
+layout_direction = 1
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = -263.0
-offset_right = -320.0
-offset_bottom = -263.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("1_kurgw")
-metadata/_edit_vertical_guides_ = [-161.0]
-
-[node name="Choices" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.5
-offset_top = -190.5
-offset_right = 43.5
-offset_bottom = 190.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
+pivot_offset = Vector2(300, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
-alignment = 1
+script = ExtResource("1_kurgw")
+metadata/_edit_vertical_guides_ = [-161.0]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 300.0
+pivot_offset = Vector2(350, 0)
+horizontal_scroll_mode = 0
+
+[node name="Choices" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
 metadata/_edit_layout_mode = 1
 
-[node name="DialogicNode_ChoiceButton1" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton1" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some textaasdfsefseddddddddddddddddddddddddddddddddddddddddddsdxdddddddddddddddddd"
+autowrap_mode = 1
+icon_alignment = 1
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton2" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton2" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton3" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton3" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton4" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton4" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton5" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton5" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton6" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton6" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton7" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton7" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton8" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton8" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton9" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton9" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton10" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton10" type="Button" parent="Choices"]
+[node name="DialogicNode_ChoiceButton11" type="Button" parent="ScrollContainer/Choices"]
 layout_mode = 2
 text = "Some text"
 script = ExtResource("1_w632k")
 
-[node name="DialogicNode_ChoiceButton11" type="Button" parent="Choices"]
-layout_mode = 2
-text = "Some text"
-script = ExtResource("1_w632k")
-
-[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="Choices"]
+[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="ScrollContainer/Choices"]
 unique_name_in_owner = true
 script = ExtResource("2_mgko6")
 sound_pressed = ExtResource("3_mql8i")
 sound_hover = ExtResource("4_420fr")
 sound_focus = SubResource("AudioStream_pe27w")
+
+[node name="DialogicNode_ChoiceButton12" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton13" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton14" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton15" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton16" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton17" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton18" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton19" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton20" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton21" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton22" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton23" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton24" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton25" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton26" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton27" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton28" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton29" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton30" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton31" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton32" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton33" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton34" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton35" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton36" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton37" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton38" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton39" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton40" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton41" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton42" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton43" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton44" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton45" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton46" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton47" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton48" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")
+
+[node name="DialogicNode_ChoiceButton49" type="Button" parent="ScrollContainer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("1_w632k")

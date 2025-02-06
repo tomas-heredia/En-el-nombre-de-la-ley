@@ -62,6 +62,74 @@ leave ciudadano2
 	protagonista:  Martínez, Maia Vanesa
 - Moreno Raúl Roberto
 	protagonista: Moreno Raúl Roberto
+- Najar, Adriana Del Valle
+	protagonista: Najar, Adriana Del Valle
+- Najar, Carlos Manuel
+	protagonista: Najar, Carlos Manuel
+- Nievas, Raquel Evangelina
+	protagonista: Nievas, Raquel Evangelina
+- Noguera, Mariano Javier
+	protagonista: Noguera, Mariano Javier
+- Ocaranza, Rodolfo Nicolas
+	protagonista: Ocaranza, Rodolfo Nicolas
+- Olea, Luis Alberto
+	protagonista: Olea, Luis Alberto
+- Orellana, José Fernando
+	protagonista: Orellana, José Fernando
+- Rodríguez, Christian Gabriel
+	protagonista: Rodríguez, Christian Gabriel
+- Rodríguez, Leopoldo (H)
+	protagonista: Rodríguez, Leopoldo (H)
+- Romano Norri, Agustín
+	protagonista: Romano Norri, Agustín
+- Salomón, Héctor Aldo
+	protagonista: Salomón, Héctor Aldo
+- Seleme, José
+	protagonista: Seleme, José
+- Serra, Francisco
+	protagonista: Serra, Francisco
+- Toscano, Ernesto Alfredo
+	protagonista: Toscano, Ernesto Alfredo
+- Vargas Aignasse, Carolina
+	protagonista:  Vargas Aignasse, Carolina
+- Vargas Aignasse, Gerónimo
+	protagonista:  Vargas Aignasse, Gerónimo
+- Verón Guerra, Carlos Eduardo
+	protagonista: Verón Guerra, Carlos Eduardo
+- Viña, Claudio Daniel
+	protagonista: Viña, Claudio Daniel
+- Yedlin, Gabriel
+	protagonista: Yedlin, Gabriel
 join ciudadano2 left
-ciudadano2: ¡Perfecto! Podes ir a su oficina.
+ciudadano2: Elige una iniciativa\:
+leave ciudadano2
+- Medio Ambiente
+	protagonista: Medio Ambiente
+- Educación
+	protagonista: Educación
+- Salud Pública
+	protagonista: Salud Pública
+- Justicia y Seguridad
+	protagonista: Justicia y Seguridad
+- Turismo
+	protagonista: Turismo
+- Cultura
+	protagonista: Cultura
+- Deportes
+	protagonista: Deportes
+- Economía
+	protagonista: Economía
+- Tecnología
+	protagonista: Tecnología
+- Obras y Servicios Públicos
+	protagonista: Obras y Servicios Públicos
+- Energía
+	protagonista: Energía
+- DDHH
+	protagonista: DDHH
+- Familia y Niñez
+	protagonista: Familia y Niñez
+- Adicciones
+	protagonista: Adicciones
+ciudadano2: ¡Perfecto! Podes ir a la oficina de la legisladora.
 [end_timeline]

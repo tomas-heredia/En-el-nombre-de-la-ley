@@ -185,7 +185,7 @@ mesh = ExtResource("1_smdut")
 shape = SubResource("ConcavePolygonShape3D_86hwj")
 
 [node name="Player" parent="." instance=ExtResource("2_0i4kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72437, 1.15579, 3.58043)
+transform = Transform3D(0.0480827, 0, -0.998843, 0, 1, 0, 0.998843, 0, 0.0480827, 3.72437, 1.15579, 3.58043)
 
 [node name="PhantomCamera3D" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 0, 1.513, 2.5)
@@ -199,7 +199,7 @@ environment = SubResource("Environment_qaj4q")
 camera_attributes = ExtResource("8_tvxti")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 4.72015, 2.66879, 6.08043)
+transform = Transform3D(1, 0, 0, 0, 0.866374, 0.499395, 0, -0.499395, 0.866374, 3.3716, 2.66879, 6.08043)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ac3xo")
